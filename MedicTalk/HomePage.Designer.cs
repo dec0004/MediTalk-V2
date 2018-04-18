@@ -35,7 +35,6 @@
 			this.colorDialog1 = new System.Windows.Forms.ColorDialog();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button5 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.button10 = new System.Windows.Forms.Button();
 			this.label8 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.label9 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -70,6 +69,7 @@
 			this.button2.Size = new System.Drawing.Size(81, 81);
 			this.button2.TabIndex = 2;
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// label2
 			// 
@@ -111,16 +111,6 @@
 			this.label3.TabIndex = 6;
 			this.label3.Text = "Lunch";
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.BackgroundImage = global::MedicTalk.Properties.Resources.MediTalk_Heading;
-			this.pictureBox1.Location = new System.Drawing.Point(315, 12);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(171, 41);
-			this.pictureBox1.TabIndex = 7;
-			this.pictureBox1.TabStop = false;
-			// 
 			// button4
 			// 
 			this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -160,6 +150,7 @@
 			this.button6.Size = new System.Drawing.Size(81, 81);
 			this.button6.TabIndex = 11;
 			this.button6.UseVisualStyleBackColor = true;
+			this.button6.Click += new System.EventHandler(this.button6_Click);
 			// 
 			// label5
 			// 
@@ -211,6 +202,7 @@
 			this.button9.Size = new System.Drawing.Size(81, 81);
 			this.button9.TabIndex = 16;
 			this.button9.UseVisualStyleBackColor = true;
+			this.button9.Click += new System.EventHandler(this.button9_Click);
 			// 
 			// label7
 			// 
@@ -243,12 +235,27 @@
 			this.label8.TabIndex = 19;
 			this.label8.Text = "Assistance";
 			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.BackColor = System.Drawing.SystemColors.Info;
+			this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.label9.Font = new System.Drawing.Font("Bernard MT Condensed", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.label9.Location = new System.Drawing.Point(306, 10);
+			this.label9.Name = "label9";
+			this.label9.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+			this.label9.Size = new System.Drawing.Size(203, 58);
+			this.label9.TabIndex = 37;
+			this.label9.Text = "MediTalk";
+			// 
 			// HomePage
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackgroundImage = global::MedicTalk.Properties.Resources.Home_Background2;
 			this.ClientSize = new System.Drawing.Size(811, 527);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.button10);
 			this.Controls.Add(this.label7);
@@ -261,7 +268,6 @@
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.button4);
-			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button1);
@@ -271,7 +277,7 @@
 			this.MaximizeBox = false;
 			this.Name = "HomePage";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -285,7 +291,6 @@
 		private System.Windows.Forms.ColorDialog colorDialog1;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Label label4;
@@ -298,5 +303,6 @@
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Button button10;
 		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label9;
 	}
 }

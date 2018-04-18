@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.button1 = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -41,7 +40,7 @@
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.label9 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -53,16 +52,6 @@
 			this.button1.Size = new System.Drawing.Size(89, 85);
 			this.button1.TabIndex = 10;
 			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.BackgroundImage = global::MedicTalk.Properties.Resources.MediTalk_Heading;
-			this.pictureBox1.Location = new System.Drawing.Point(315, 12);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(171, 41);
-			this.pictureBox1.TabIndex = 11;
-			this.pictureBox1.TabStop = false;
 			// 
 			// pictureBox2
 			// 
@@ -169,12 +158,27 @@
 			this.button7.UseVisualStyleBackColor = false;
 			this.button7.Click += new System.EventHandler(this.button7_Click);
 			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.BackColor = System.Drawing.SystemColors.Info;
+			this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.label9.Font = new System.Drawing.Font("Bernard MT Condensed", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.label9.Location = new System.Drawing.Point(306, 10);
+			this.label9.Name = "label9";
+			this.label9.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+			this.label9.Size = new System.Drawing.Size(203, 58);
+			this.label9.TabIndex = 37;
+			this.label9.Text = "MediTalk";
+			// 
 			// Shower
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::MedicTalk.Properties.Resources.Home_Background;
 			this.ClientSize = new System.Drawing.Size(811, 527);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.button7);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.comboBox2);
@@ -186,11 +190,9 @@
 			this.Controls.Add(this.radioButton2);
 			this.Controls.Add(this.radioButton1);
 			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.button1);
 			this.Name = "Shower";
 			this.Text = "Shower";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -200,7 +202,6 @@
 		#endregion
 
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.RadioButton radioButton1;
 		private System.Windows.Forms.RadioButton radioButton2;
@@ -212,5 +213,6 @@
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Label label9;
 	}
 }

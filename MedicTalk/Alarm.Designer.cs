@@ -53,6 +53,7 @@
 			this.button1.Size = new System.Drawing.Size(89, 85);
 			this.button1.TabIndex = 10;
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// pictureBox1
 			// 
@@ -170,6 +171,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.button1);
 			this.Name = "Alarm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Alarm";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

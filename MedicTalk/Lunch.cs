@@ -12,9 +12,11 @@ namespace MedicTalk
 {
 	public partial class Lunch : Form
 	{
-		public Lunch()
+		private HomePage _home;
+		public Lunch(HomePage _home)
 		{
 			InitializeComponent();
+			this._home = _home;
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -25,6 +27,12 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			_home.Show();
+			this.Hide();
 		}
 	}
 }

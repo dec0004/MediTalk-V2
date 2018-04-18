@@ -19,6 +19,7 @@ namespace MedicTalk
 		HomePage _HomePage;
 		private string User_Name;
 		private string Password;
+		
 
 		public Form1()
 		{
@@ -45,10 +46,19 @@ namespace MedicTalk
 		private void button2_Click(object sender, EventArgs e)
 		{
 			loggedIn = true;
-			_HomePage = new MedicTalk.HomePage();
+			_HomePage = new MedicTalk.HomePage(this);
 			this.Hide();
 			_HomePage.Show();
 
+		}
+
+		public void Logout()
+		{
+		
+				LoggedInStatus = false;
+				this.Show();
+				_HomePage = null;
+			
 		}
 
 		public bool LoggedInStatus

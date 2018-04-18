@@ -12,14 +12,22 @@ namespace MedicTalk
 {
 	public partial class Alarm : Form
 	{
-		public Alarm()
+		HomePage _home;
+		public Alarm(HomePage _home)
 		{
 			InitializeComponent();
+			this._home = _home;
 		}
 
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			_home.Show();
+			this.Hide();
 		}
 	}
 }

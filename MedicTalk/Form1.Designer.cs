@@ -34,11 +34,10 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.button3 = new System.Windows.Forms.Button();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			this.label9 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// textBox3
@@ -89,16 +88,6 @@
 			this.button3.Text = "Forgot Password";
 			this.button3.UseVisualStyleBackColor = false;
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox2.BackgroundImage = global::MedicTalk.Properties.Resources.MediTalk_Heading;
-			this.pictureBox2.Location = new System.Drawing.Point(319, 60);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(171, 41);
-			this.pictureBox2.TabIndex = 8;
-			this.pictureBox2.TabStop = false;
-			// 
 			// notifyIcon1
 			// 
 			this.notifyIcon1.Text = "notifyIcon1";
@@ -126,23 +115,37 @@
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.BackColor = System.Drawing.SystemColors.Info;
+			this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.label9.Font = new System.Drawing.Font("Bernard MT Condensed", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.label9.Location = new System.Drawing.Point(306, 10);
+			this.label9.Name = "label9";
+			this.label9.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+			this.label9.Size = new System.Drawing.Size(203, 58);
+			this.label9.TabIndex = 37;
+			this.label9.Text = "MediTalk";
+			// 
 			// Form1
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackgroundImage = global::MedicTalk.Properties.Resources.Login_Page_Background;
 			this.ClientSize = new System.Drawing.Size(811, 527);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.textBox4);
 			this.Controls.Add(this.textBox3);
-			this.Location = new System.Drawing.Point(269, 217);
 			this.MaximizeBox = false;
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -162,10 +165,10 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.NotifyIcon notifyIcon1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label9;
 	}
 }
 

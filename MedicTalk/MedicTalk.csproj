@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alarm.Designer.cs">
+      <DependentUpon>Alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drink.Designer.cs">
+      <DependentUpon>Drink.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forgot_UserName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,14 +76,47 @@
     <Compile Include="Forgot_Password.Designer.cs">
       <DependentUpon>Forgot_Password.cs</DependentUpon>
     </Compile>
+    <Compile Include="BreakFast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BreakFast.Designer.cs">
+      <DependentUpon>BreakFast.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lunch.Designer.cs">
+      <DependentUpon>Lunch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shower.Designer.cs">
+      <DependentUpon>Shower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visitor.Designer.cs">
+      <DependentUpon>Visitor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Alarm.resx">
+      <DependentUpon>Alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BreakFast.resx">
+      <DependentUpon>BreakFast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drink.resx">
+      <DependentUpon>Drink.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forgot_Password.resx">
       <DependentUpon>Forgot_Password.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,10 +129,19 @@
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lunch.resx">
+      <DependentUpon>Lunch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shower.resx">
+      <DependentUpon>Shower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visitor.resx">
+      <DependentUpon>Visitor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +214,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icon_Assistance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_Submit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_Submitted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plain_Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

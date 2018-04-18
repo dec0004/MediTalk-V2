@@ -20,3 +20,12 @@ C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj
 C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.csproj.GenerateResource.Cache
 C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\bin\Debug\MedicTalk.exe
 C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\bin\Debug\MedicTalk.pdb
+C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.Alarm.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.BreakFast.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.Drink.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.Lunch.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.Shower.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\week5\HDProject\MedicTalk\MedicTalk\obj\Debug\MedicTalk.Visitor.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MedicTalk.exe.config
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.exe
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.pdb

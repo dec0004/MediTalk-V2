@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace MedicTalk
 {
+	
 	public partial class BreakFast : Form
 	{
-		public BreakFast()
+		private HomePage _home;
+		public BreakFast(HomePage _home)
 		{
 			InitializeComponent();
+			this._home = _home;
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,6 +38,12 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			_home.Show();
+			this.Hide();
 		}
 	}
 }
