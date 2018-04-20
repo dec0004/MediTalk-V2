@@ -17,11 +17,14 @@ namespace MedicTalk
 		private Alarm _alarm;
 		private BreakFast _breakfast;
 		private Lunch _lunch;
-
-		public HomePage(Form1 form1)
+		public Mysql_Connect _connect;
+	
+		public HomePage(Form1 form1, Mysql_Connect connect)
 		{
 			this.form1 = form1;
 			InitializeComponent();
+			_connect = connect;
+
 		}
 
 		//Logout button
@@ -41,6 +44,8 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+			_connect.Command("INSERT INTO Requests (Request_id, User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (Default, 0, 'Emergency Request', 'None', 'Jordan', 'de Carheil', 'S8', '18')");
+			
 		}
 
 		//Drinks Icon

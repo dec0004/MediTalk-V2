@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace MedicTalk
 {
@@ -19,13 +21,14 @@ namespace MedicTalk
 		HomePage _HomePage;
 		private string User_Name;
 		private string Password;
-		
+		public Mysql_Connect _connect;
 
 		public Form1()
 		{
 			InitializeComponent();
 			valid_Credentials = false;
 			loggedIn = false;
+			
 		}
 
 		private void Forgot_UserName_Click(object sender, EventArgs e)
@@ -33,6 +36,7 @@ namespace MedicTalk
 			FGot_User = new MedicTalk.Forgot_UserName();
 			this.Hide();
 			FGot_User.Show();
+			_connect = new Mysql_Connect();
 		}
 
 
@@ -45,8 +49,10 @@ namespace MedicTalk
 
 		private void button2_Click(object sender, EventArgs e)
 		{
+			//Debug.WriteLine("sCFSF");
 			loggedIn = true;
-			_HomePage = new MedicTalk.HomePage(this);
+			_connect = new Mysql_Connect();
+			_HomePage = new MedicTalk.HomePage(this, _connect);
 			this.Hide();
 			_HomePage.Show();
 
