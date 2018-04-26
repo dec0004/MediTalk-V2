@@ -18,12 +18,14 @@ namespace MedicTalk
 		private BreakFast _breakfast;
 		private Lunch _lunch;
 		public Mysql_Connect _connect;
-	
+		public Request_Emergency _emergencyRequest;
+
 		public HomePage(Form1 form1, Mysql_Connect connect)
 		{
 			this.form1 = form1;
 			InitializeComponent();
 			_connect = connect;
+			_emergencyRequest = new Request_Emergency(_connect, form1);
 
 		}
 
@@ -36,6 +38,9 @@ namespace MedicTalk
 			{
 				this.Hide();
 				form1.Logout();
+				form1.UserNameProperty = "";
+				form1.PasswordProperty = "";
+				form1.UserIDProperty = 0;
 			}
 			
 		}
@@ -44,7 +49,7 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
-			_connect.Command("INSERT INTO Requests (Request_id, User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (Default, 0, 'Emergency Request', 'None', 'Jordan', 'de Carheil', 'S8', '18')");
+			_emergencyRequest.CallRequest();
 			
 		}
 

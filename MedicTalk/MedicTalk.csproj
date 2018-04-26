@@ -99,6 +99,7 @@
     <Compile Include="Mysql_Connect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request_Emergency.cs" />
     <Compile Include="Shower.cs">
       <SubType>Form</SubType>
     </Compile>

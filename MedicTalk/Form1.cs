@@ -14,7 +14,6 @@ namespace MedicTalk
 {
 	public partial class Form1 : Form
 	{
-		private bool valid_Credentials;
 		private bool loggedIn;
 		Forgot_Password FGot_Pass;
 		Forgot_UserName FGot_User;
@@ -22,21 +21,42 @@ namespace MedicTalk
 		private string User_Name;
 		private string Password;
 		public Mysql_Connect _connect;
+		private bool _commandResult;
+		private int User_Id;
+		List<string> Keywords;
+		List<string> Parameters;
+		List<string> ParameterValues;
+		private string[] Query_Results;
 
 		public Form1()
 		{
 			InitializeComponent();
-			valid_Credentials = false;
 			loggedIn = false;
+			_commandResult = false;
+			_connect = new Mysql_Connect();
+
+		}
+
+
+		private void textBox3_TextChanged(object sender, EventArgs e)
+		{
 			
+		}
+
+		private void textBox4_TextChanged(object sender, EventArgs e)
+		{
+
+
 		}
 
 		private void Forgot_UserName_Click(object sender, EventArgs e)
 		{
-			FGot_User = new MedicTalk.Forgot_UserName();
-			this.Hide();
-			FGot_User.Show();
-			_connect = new Mysql_Connect();
+			
+					FGot_User = new MedicTalk.Forgot_UserName();
+					this.Hide();
+					FGot_User.Show();
+					_connect = new Mysql_Connect();
+
 		}
 
 
@@ -49,51 +69,87 @@ namespace MedicTalk
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			//Debug.WriteLine("sCFSF");
-			loggedIn = true;
-			_connect = new Mysql_Connect();
-			_HomePage = new MedicTalk.HomePage(this, _connect);
-			this.Hide();
-			_HomePage.Show();
+			User_Name = textBox3.Text;
+			Password = textBox4.Text;
 
+			if (User_Name == "" || Password == "")
+			{
+				MessageBox.Show("You must enter both a password and username");
+			}
+			else
+			{
+				_commandResult = _connect.Login("SELECT * FROM Accounts WHERE User_Name = @user and Password=@Password", User_Name, Password);
+
+				//Creates list of keywords to pass to select statement. This tells he select
+				//function to return the values from those keywords.
+				Keywords = new List<string>();
+				Keywords.Add("User_Id");
+				Parameters = new List<string>();
+				Parameters.Add("User_Name");
+				Parameters.Add("Password");
+				ParameterValues = new List<string>();
+				ParameterValues.Add(User_Name);
+				ParameterValues.Add(Password);
+				
+				string _returnedQuery = _connect.Select("SELECT User_id FROM Accounts WHERE User_Name = @User_Name and Password=@Password", 1, Keywords, Parameters, ParameterValues);
+				Query_Results = _returnedQuery.Split('/');
+
+					if (_commandResult)
+				{
+					loggedIn = true;
+					_HomePage = new MedicTalk.HomePage(this, _connect);
+					this.Hide();
+					_HomePage.Show();
+				}
+				else
+				{
+					MessageBox.Show("Invalid Credentials");
+				}
+			}
 		}
 
 		public void Logout()
 		{
-		
-				LoggedInStatus = false;
+	
 				this.Show();
 				_HomePage = null;
 			
 		}
 
-		public bool LoggedInStatus
+		public int UserIDProperty
 		{
 			get
 			{
-				return loggedIn;
+				return User_Id;
 			}
 			set
 			{
-				loggedIn = value;
+				User_Id = value;
 			}
 		}
 
-		public string Get_User
+		public string PasswordProperty
+		{
+			get
+			{
+				return Password;
+			}
+			set
+			{
+				Password = value;
+			}
+		}
+
+		public string UserNameProperty
 		{
 			get
 			{
 				return User_Name;
 			}
-		}
-
-		public string Get_Password
-		{
-			get
+			set
 			{
-				return Get_Password;
+				User_Name = value;
 			}
 		}
-
 	}
 }
