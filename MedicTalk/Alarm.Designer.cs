@@ -34,12 +34,12 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Youralarm = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Remove = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label2 = new System.Windows.Forms.Label();
 			this.button7 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,29 +87,22 @@
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(216, 159);
+			this.comboBox1.Location = new System.Drawing.Point(269, 159);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 28);
 			this.comboBox1.TabIndex = 17;
 			this.comboBox1.Text = "Hour";
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 
 			// comboBox2
 			// 
 			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(359, 159);
+			this.comboBox2.Location = new System.Drawing.Point(421, 159);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(121, 28);
 			this.comboBox2.TabIndex = 18;
 			this.comboBox2.Text = "Minutes";
-			// 
-			// comboBox3
-			// 
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(501, 159);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(121, 28);
-			this.comboBox3.TabIndex = 19;
-			this.comboBox3.Text = "Seconds";
+			this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 			// 
 			// dataGridView1
 			// 
@@ -122,6 +115,7 @@
 			this.dataGridView1.RowTemplate.Height = 28;
 			this.dataGridView1.Size = new System.Drawing.Size(240, 150);
 			this.dataGridView1.TabIndex = 20;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 			// 
 			// Youralarm
 			// 
@@ -154,16 +148,26 @@
 			this.button7.UseVisualStyleBackColor = false;
 			this.button7.Click += new System.EventHandler(this.button7_Click);
 			// 
+			// button2
+			// 
+			this.button2.Image = global::MedicTalk.Properties.Resources.Icon_Submitted;
+			this.button2.Location = new System.Drawing.Point(345, 201);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(132, 31);
+			this.button2.TabIndex = 38;
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// Alarm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::MedicTalk.Properties.Resources.Home_Background1;
 			this.ClientSize = new System.Drawing.Size(811, 527);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button7);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.dataGridView1);
-			this.Controls.Add(this.comboBox3);
 			this.Controls.Add(this.comboBox2);
 			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.label1);
@@ -189,11 +193,11 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.ComboBox comboBox3;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Youralarm;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Remove;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button button2;
 	}
 }

@@ -20,9 +20,13 @@ namespace MedicTalk
 		HomePage _HomePage;
 		private string User_Name;
 		private string Password;
+		public string _firstName;
+		public string _lastName;
+		public string _room;
+		public string _section;
 		public Mysql_Connect _connect;
 		private bool _commandResult;
-		private int User_Id;
+		private string User_Id;
 		List<string> Keywords;
 		List<string> Parameters;
 		List<string> ParameterValues;
@@ -34,7 +38,11 @@ namespace MedicTalk
 			loggedIn = false;
 			_commandResult = false;
 			_connect = new Mysql_Connect();
-
+			User_Id = "0";
+			_firstName = "";
+			_lastName = "";
+			_room = "";
+			_section = "";
 		}
 
 
@@ -72,6 +80,7 @@ namespace MedicTalk
 			User_Name = textBox3.Text;
 			Password = textBox4.Text;
 
+
 			if (User_Name == "" || Password == "")
 			{
 				MessageBox.Show("You must enter both a password and username");
@@ -84,6 +93,10 @@ namespace MedicTalk
 				//function to return the values from those keywords.
 				Keywords = new List<string>();
 				Keywords.Add("User_Id");
+				Keywords.Add("First_Name");
+				Keywords.Add("Last_Name");
+				Keywords.Add("Section");
+				Keywords.Add("Room");
 				Parameters = new List<string>();
 				Parameters.Add("User_Name");
 				Parameters.Add("Password");
@@ -91,10 +104,16 @@ namespace MedicTalk
 				ParameterValues.Add(User_Name);
 				ParameterValues.Add(Password);
 				
-				string _returnedQuery = _connect.Select("SELECT User_id FROM Accounts WHERE User_Name = @User_Name and Password=@Password", 1, Keywords, Parameters, ParameterValues);
+				string _returnedQuery = _connect.Select("SELECT User_id, First_Name, Last_Name, Section, Room FROM Accounts WHERE User_Name = @User_Name and Password=@Password", 1, Keywords, Parameters, ParameterValues);
+			
 				Query_Results = _returnedQuery.Split('/');
+				User_Id = Query_Results[0];
+				_firstName = Query_Results[1];
+				_lastName = Query_Results[2];
+				_section = Query_Results[3];
+				_room = Query_Results[4];
 
-					if (_commandResult)
+				if (_commandResult)
 				{
 					loggedIn = true;
 					_HomePage = new MedicTalk.HomePage(this, _connect);
@@ -116,7 +135,7 @@ namespace MedicTalk
 			
 		}
 
-		public int UserIDProperty
+		public string UserIDProperty
 		{
 			get
 			{
@@ -151,5 +170,38 @@ namespace MedicTalk
 				User_Name = value;
 			}
 		}
+
+		public string RoomProperty
+		{
+			get
+			{
+				return _room;
+			}
+		}
+
+
+		public string SectionProperty
+		{
+			get
+			{
+				return _section;
+			}
+		}
+		public string FirstNameProperty
+		{
+			get
+			{
+				return _firstName;
+			}
+		}
+
+		public string LastNameProperty
+		{
+			get
+			{
+				return _lastName;
+			}
+		}
+
 	}
 }

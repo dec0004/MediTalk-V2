@@ -93,6 +93,7 @@
 			this.checkBox2.TabIndex = 13;
 			this.checkBox2.Text = "Warm";
 			this.checkBox2.UseVisualStyleBackColor = true;
+			this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
 			// 
 			// checkBox3
 			// 
@@ -103,6 +104,7 @@
 			this.checkBox3.TabIndex = 14;
 			this.checkBox3.Text = "Hot";
 			this.checkBox3.UseVisualStyleBackColor = true;
+			this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
 			// 
 			// label1
 			// 
@@ -132,6 +134,7 @@
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(145, 154);
 			this.textBox1.TabIndex = 17;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// label3
 			// 
@@ -151,6 +154,7 @@
 			this.comboBox1.Size = new System.Drawing.Size(295, 28);
 			this.comboBox1.TabIndex = 19;
 			this.comboBox1.Text = "Make your choice";
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
 			// 
 			// label4
 			// 

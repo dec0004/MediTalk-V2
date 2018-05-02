@@ -17,8 +17,10 @@ namespace MedicTalk
 		private Alarm _alarm;
 		private BreakFast _breakfast;
 		private Lunch _lunch;
+		private Shower _shower;
 		public Mysql_Connect _connect;
 		public Request_Emergency _emergencyRequest;
+		public Visitor _visitor;
 
 		public HomePage(Form1 form1, Mysql_Connect connect)
 		{
@@ -40,7 +42,7 @@ namespace MedicTalk
 				form1.Logout();
 				form1.UserNameProperty = "";
 				form1.PasswordProperty = "";
-				form1.UserIDProperty = 0;
+				form1.UserIDProperty = "0";
 			}
 			
 		}
@@ -64,7 +66,7 @@ namespace MedicTalk
 		//Alarm Icon
 		private void button6_Click(object sender, EventArgs e)
 		{
-			_alarm = new MedicTalk.Alarm(this);
+			_alarm = new MedicTalk.Alarm(this, _connect, form1);
 			this.Hide();
 			_alarm.Show();
 		}
@@ -72,7 +74,7 @@ namespace MedicTalk
 		//Breakfast Icon
 		private void button2_Click(object sender, EventArgs e)
 		{
-			_breakfast = new MedicTalk.BreakFast(this);
+			_breakfast = new MedicTalk.BreakFast(this, _connect, form1);
 			this.Hide();
 			_breakfast.Show();
 		}
@@ -82,6 +84,20 @@ namespace MedicTalk
 			_lunch = new MedicTalk.Lunch(this);
 			this.Hide();
 			_lunch.Show();
+		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+			_visitor = new MedicTalk.Visitor(this, _connect, form1);
+			this.Hide();
+			_visitor.Show();
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			_shower = new MedicTalk.Shower(this, _connect, form1);
+			this.Hide();
+			_shower.Show();
 		}
 	}
 }

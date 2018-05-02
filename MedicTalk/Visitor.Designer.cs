@@ -67,6 +67,7 @@
 			this.button1.Size = new System.Drawing.Size(89, 85);
 			this.button1.TabIndex = 14;
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button7
 			// 
@@ -104,6 +105,7 @@
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(164, 26);
 			this.textBox1.TabIndex = 25;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// label3
 			// 
@@ -120,6 +122,7 @@
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(164, 26);
 			this.textBox2.TabIndex = 27;
+			this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
 			// 
 			// label4
 			// 
@@ -164,6 +167,7 @@
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(164, 28);
 			this.comboBox1.TabIndex = 33;
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 
 			// comboBox2
 			// 
@@ -172,6 +176,7 @@
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(164, 28);
 			this.comboBox2.TabIndex = 34;
+			this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 			// 
 			// label7
 			// 
@@ -188,6 +193,7 @@
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(296, 26);
 			this.dateTimePicker1.TabIndex = 36;
+			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
 			// 
 			// button2
 			// 
@@ -197,6 +203,7 @@
 			this.button2.Size = new System.Drawing.Size(132, 31);
 			this.button2.TabIndex = 37;
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// Visitor
 			// 

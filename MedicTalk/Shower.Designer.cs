@@ -52,6 +52,7 @@
 			this.button1.Size = new System.Drawing.Size(89, 85);
 			this.button1.TabIndex = 10;
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -72,6 +73,7 @@
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "Shower";
 			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -83,6 +85,7 @@
 			this.radioButton2.TabStop = true;
 			this.radioButton2.Text = "Bath";
 			this.radioButton2.UseVisualStyleBackColor = true;
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
 			// label1
 			// 
@@ -111,6 +114,7 @@
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(88, 28);
 			this.comboBox1.TabIndex = 17;
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 
 			// label3
 			// 
@@ -137,6 +141,7 @@
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(88, 28);
 			this.comboBox2.TabIndex = 20;
+			this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 			// 
 			// button2
 			// 
@@ -146,6 +151,7 @@
 			this.button2.Size = new System.Drawing.Size(132, 31);
 			this.button2.TabIndex = 21;
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// button7
 			// 
@@ -192,6 +198,7 @@
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.button1);
 			this.Name = "Shower";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Shower";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
