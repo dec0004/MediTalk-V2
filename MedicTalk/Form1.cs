@@ -26,10 +26,10 @@ namespace MedicTalk
 		public string _section;
 		public Mysql_Connect _connect;
 		private bool _commandResult;
-		private string User_Id;
-		List<string> Keywords;
+		private string User_Id;List<string> Keywords;
 		List<string> Parameters;
 		List<string> ParameterValues;
+		
 		private string[] Query_Results;
 
 		public Form1()
@@ -104,7 +104,7 @@ namespace MedicTalk
 				ParameterValues.Add(User_Name);
 				ParameterValues.Add(Password);
 				
-				string _returnedQuery = _connect.Select("SELECT User_id, First_Name, Last_Name, Section, Room FROM Accounts WHERE User_Name = @User_Name and Password=@Password", 1, Keywords, Parameters, ParameterValues);
+				string _returnedQuery = _connect.Select("SELECT User_id, First_Name, Last_Name, Section, Room FROM Accounts WHERE User_Name = @User_Name and Password=@Password", "1", Keywords, Parameters, ParameterValues);
 			
 				Query_Results = _returnedQuery.Split('/');
 				User_Id = Query_Results[0];

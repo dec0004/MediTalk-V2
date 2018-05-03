@@ -13,7 +13,7 @@ namespace MedicTalk
 	public partial class HomePage : Form
 	{
 		private Form1 form1;
-		private Drink _drink;
+		private Drinks _drink;
 		private Alarm _alarm;
 		private BreakFast _breakfast;
 		private Lunch _lunch;
@@ -58,7 +58,7 @@ namespace MedicTalk
 		//Drinks Icon
 		private void button9_Click(object sender, EventArgs e)
 		{
-			_drink = new MedicTalk.Drink(this);
+			_drink = new MedicTalk.Drinks(this,_connect, form1);
 			this.Hide();
 			_drink.Show();
 		}
@@ -74,14 +74,14 @@ namespace MedicTalk
 		//Breakfast Icon
 		private void button2_Click(object sender, EventArgs e)
 		{
-			_breakfast = new MedicTalk.BreakFast(this, _connect, form1);
+			_breakfast = new MedicTalk.BreakFast(this, _connect, form1, _emergencyRequest);
 			this.Hide();
 			_breakfast.Show();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			_lunch = new MedicTalk.Lunch(this);
+			_lunch = new MedicTalk.Lunch(this, _connect, form1);
 			this.Hide();
 			_lunch.Show();
 		}
@@ -98,6 +98,13 @@ namespace MedicTalk
 			_shower = new MedicTalk.Shower(this, _connect, form1);
 			this.Hide();
 			_shower.Show();
+		}
+
+		private void button3_Click_1(object sender, EventArgs e)
+		{
+			_lunch = new MedicTalk.Lunch(this, _connect, form1);
+			this.Hide();
+			_lunch.Show();
 		}
 	}
 }

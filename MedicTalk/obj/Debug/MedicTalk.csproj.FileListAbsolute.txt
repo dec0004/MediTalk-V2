@@ -36,7 +36,6 @@ C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MySql.Data
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.csprojResolveAssemblyReference.cache
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Alarm.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.BreakFast.resources
-C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Drink.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Forgot_Password.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Forgot_UserName.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Form1.resources
@@ -48,3 +47,7 @@ C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.csproj.GenerateResource.Cache
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MySql.Web.dll
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MySql.Web.xml
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\nunit.framework.dll
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\nunit.framework.pdb
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\nunit.framework.xml
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Drinks.resources
