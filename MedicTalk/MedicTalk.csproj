@@ -127,6 +127,8 @@
     <Compile Include="Forms\Visitor.Designer.cs">
       <DependentUpon>Visitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Requests_Handler.cs" />
+    <Compile Include="Requests_Handler_Unittest.cs" />
     <EmbeddedResource Include="Forms\Alarm.resx">
       <DependentUpon>Alarm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\List_Of_Requests.resx">
+      <DependentUpon>List_Of_Requests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Lunch.resx">
       <DependentUpon>Lunch.cs</DependentUpon>

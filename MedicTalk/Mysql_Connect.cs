@@ -15,11 +15,12 @@ namespace MedicTalk
 	{
 		private string _myConnectionString;
 		public MySqlConnection connection;
-		private List<string>[] values;
 		private string queryResult;
 		private string rows;
 
-        #region Unneeded
+
+        // Stores functionality required to connect to the database
+        #region Connection related functions
         public Mysql_Connect()
 		{
 			_myConnectionString = "server=192.185.16.222;database=dec0004_MediTalk;uid=dec0004_access; pwd=321xar22j;";
@@ -68,7 +69,9 @@ namespace MedicTalk
 				return false;
 			}
 		}
-        
+
+        #endregion //  //
+
         // <summary>
         // Used to insert an entry into the database
         // </summary>
@@ -97,6 +100,8 @@ namespace MedicTalk
 				this.CloseConnection();
 			}
 		}
+
+
 
         // <summary>
         // Counts amount of rows for a select statement
@@ -131,7 +136,6 @@ namespace MedicTalk
 
 		}
 
-        #endregion
 
 
         // <summary>
@@ -215,19 +219,9 @@ namespace MedicTalk
 
 
 
-
-
-
-
-
-
-
-
-
         // <summary>
         // Used to select an entry in the database
         // </summary>
-        
         public string Select(string _inputCommand, string _expectedRows, List<string> _keywords, List<string> parameterKey, List<string> parameterValues)
 		{
 			queryResult = "";
@@ -284,10 +278,9 @@ namespace MedicTalk
 			return queryResult.Remove(queryResult.Length - 1); ;
 		}
 
+
         public void Delete()
 		{
 		}
-
-
 	}
 }

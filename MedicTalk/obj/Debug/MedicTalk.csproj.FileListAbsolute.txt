@@ -124,3 +124,29 @@ C:\Users\burak\Desktop\Latest MediTalk\MedicTalk\obj\Debug\MedicTalk.csproj.Core
 C:\Users\burak\Desktop\Latest MediTalk\MedicTalk\obj\Debug\MedicTalk.csproj.CopyComplete
 C:\Users\burak\Desktop\Latest MediTalk\MedicTalk\obj\Debug\MedicTalk.exe
 C:\Users\burak\Desktop\Latest MediTalk\MedicTalk\obj\Debug\MedicTalk.pdb
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\MedicTalk.exe.config
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\MedicTalk.exe
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\MedicTalk.pdb
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\nunit.framework.dll
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\MySql.Data.xml
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\MySql.Web.xml
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\nunit.framework.pdb
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\bin\Debug\nunit.framework.xml
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.csprojResolveAssemblyReference.cache
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Alarm.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.BreakFast.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Drinks.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Forgot_Password.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Forgot_UserName.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Form1.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.HomePage.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Lunch.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Properties.Resources.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Shower.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Visitor.resources
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.csproj.GenerateResource.cache
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.csproj.CoreCompileInputs.cache
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.csproj.CopyComplete
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.exe
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.pdb
+C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.List_Of_Requests.resources

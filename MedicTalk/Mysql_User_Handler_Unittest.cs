@@ -21,6 +21,7 @@ namespace MediTalk
             Assert.IsTrue(Mysql_User_Handler.Login("admin", "admin"), "User should be able to log in, but can't");
         }
 
+
         // Test that the username is case insensitive
         [Test]
         public void Should_Not_Be_Case_Sensitive()
@@ -46,19 +47,22 @@ namespace MediTalk
 
 
         // Test if a user who is categorised as a staff member has access to their specific features
+        // In this case, test if the usertype property becomes "staff"
         [Test]
         public void Should_Give_More_Access_To_Staff()
         {
-
+            Mysql_User_Handler.Login("admin", "admin");
+            Assert.IsTrue(Mysql_User_Handler.UserType == "staff", "User is not identified as a staff member when they should be");
         }
+
 
         // Test if a user who is a resident has access to their specific features
         [Test]
         public void Should_Give_Residents_Access()
         {
-
+            Mysql_User_Handler.Login("resident", "resident");
+            Assert.IsTrue(Mysql_User_Handler.UserType == "resident", "User is not identified as a resident when they should be");
         }
-
     }
 }
 

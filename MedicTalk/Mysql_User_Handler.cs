@@ -16,6 +16,7 @@ namespace MedicTalk
 
         static Mysql_Connect _MySQL = new Mysql_Connect();
 
+        // Keeps track of the kind of user (Resident, staff, etc) that's logged in
         public static string UserType
         {
             get => _userType;
@@ -28,7 +29,7 @@ namespace MedicTalk
         // <return>True if user exists</return>
         public static bool User_Exists(string user, string pass)
         {
-            string _inputCommand = "SELECT * FROM Accounts WHERE User_Name = '" + user + "' and Password = '" + pass + "'";
+            string _inputCommand = "SELECT * FROM NEWUsers WHERE UserName = '" + user + "' and Password = '" + pass + "'";
             Console.WriteLine(_inputCommand);
             MySqlCommand _command = new MySqlCommand();
 

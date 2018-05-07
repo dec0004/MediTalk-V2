@@ -48,7 +48,7 @@ namespace MedicTalk
 			_section = "";
 		}
 
-        
+        #region Unimportant functions
         private void Username_Textbox_TextChanged(object sender, EventArgs e)
         {
 
@@ -76,9 +76,8 @@ namespace MedicTalk
 		{
 			this.Hide();
 			FGot_Pass.Show();
-
 		}
-
+        #endregion
 
         // <summary>
         // Checks if user can log in

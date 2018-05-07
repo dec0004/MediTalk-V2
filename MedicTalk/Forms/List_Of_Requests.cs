@@ -21,5 +21,16 @@ namespace MedicTalk
             InitializeComponent();
             _connect = connect;
         }
+
+        private void List_Of_Requests_Load(object sender, EventArgs e)
+        {
+            Requests_Handler.Show_Requests();
+            RequestsList.DataSource = Requests_Handler.DataTable;
+        }
+
+        private void RequestList_Click(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
