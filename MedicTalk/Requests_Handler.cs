@@ -19,13 +19,42 @@ namespace MedicTalk
         public static DataTable DataTable { get => dataTable; set => dataTable = value; }
 
 
+
+
+
+
+
+
+        //////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////
+
         /// <summary>
-        /// Add request made by the resident into the database
+        /// Add food request made by the resident into the database
         /// </summary>
-        public static void Add_Request()
+        public static void Add_Food(string foodName, string HotOrCold, string MealType)
         {
 
+            // Insert the request into the table
+            _MySQL.Insert_Request(
+                "INSERT INTO NEWFoodRequests (UID, MealType, HotOrCold, MealName, TimeOfRequest, DateOfRequest) " +
+                "Values (" + Mysql_User_Handler.User_ID + ", '" + MealType + "', '" + HotOrCold + "', '" + foodName + 
+                "', NOW(), CURDATE());");
+
+
+            //INSERT INTO NEWFoodRequests (UID, MealType, HotOrCold, MealName, TimeOfRequest, DateOfRequest) 
+            //VALUES ("5", "Breakfast", "Hot", "Bacon and egg toast", NOW(), CURDATE());
         }
+
+
+
+
+
+
+
+
+
 
         /// <summary>
         /// Mark a request as complete so it no longer shows
@@ -40,16 +69,18 @@ namespace MedicTalk
         /// </summary>
         public static void Show_Requests()
         {
+            // TODO: Add a refresh button             
             if (_MySQL.OpenConnection())
             {
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(
-                    "SELECT U.UID, U.FirstName, U.LastName, Res.Room, Res.Section, Req.TypeOf, Req.Choice, Req.RequestMadeAt, Req.Completed " +
-                    "FROM NEWUsers U " +
+                // TODO: Seperate the requests list into 2 seperate request lists - 1 for food, and 1 for others.
+                MySqlDataAdapter mySqlDataAdapter_Food = new MySqlDataAdapter(
+                    "SELECT U.UID, U.FirstName, U.LastName, Res.Room, Res.Section, Req.MealType, Req.HotOrCold, Req.MealName, Req.DateOfRequest, Req.TimeOfRequest, Req.Completed FROM NEWUsers U " +
                     "INNER JOIN NEWResidents Res ON U.UID = Res.UID " +
-                    "INNER JOIN NEWRequests Req ON Res.UID = Req.UID;"
+                    "INNER JOIN NEWFoodRequests Req ON Res.UID = Req.UID;"
                     , _MySQL.connection);
                 DataTable = new DataTable();
-                mySqlDataAdapter.Fill(DataTable);
+                mySqlDataAdapter_Food.Fill(DataTable);
+
             }
             else
             {

@@ -13,6 +13,7 @@ namespace MedicTalk
     {
 
         private static string _userType; // Will store what kind of user is logged in (Resident, staff, etc)
+        private static string _user_ID; // Stores user ID
 
         static Mysql_Connect _MySQL = new Mysql_Connect();
 
@@ -20,6 +21,10 @@ namespace MedicTalk
         public static string UserType
         {
             get => _userType;
+        }
+        public static string User_ID
+        {
+            get => _user_ID;
         }
 
 
@@ -72,7 +77,7 @@ namespace MedicTalk
                 List<string> userDetails = new List<string>(_MySQL.Select("NEWUsers", "UID", "UserName = '" + username + "'", 1));
                 string[] seperatedDetails = userDetails[0].Split('/');
                 string userID = seperatedDetails[0];
-
+                _user_ID = seperatedDetails[0];
 
                 // Check whether user is a staff member or resident
                 if (_MySQL.DataExists("NEWStaff", "UID = '" + userID + "'"))

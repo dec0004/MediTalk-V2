@@ -26,7 +26,16 @@ namespace MedicTalk
 		public string expectedRows;
 		private string type;
 		Request_Emergency _request_emerg;
-		public BreakFast(HomePage _homePage, Mysql_Connect connect, Form1 _form1, Request_Emergency request_emerg)
+
+        // New parameters
+
+        private string _mealType = "breakfast"; // The type of meal (Lunch, breakfast, etc)
+        private string _HotOrCold;
+        private string _chosenMealName;
+
+
+
+        public BreakFast(HomePage _homePage, Mysql_Connect connect, Form1 _form1, Request_Emergency request_emerg)
 		{
 			InitializeComponent();
 			form1 = _form1;
@@ -66,41 +75,15 @@ namespace MedicTalk
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
-			type = "Breakfast_cold";
-			checkBox2.Checked = false;
-			checkBox3.Checked = false;
-			this.comboBox1.Items.Clear();
-			Keywords = new List<string>();
-			Keywords.Add("Breakfast_cold_item");
-			Parameters = new List<string>();
-			Parameters.Add("");
-			ParameterValues = new List<string>();
-			ParameterValues.Add("");
 
-			expectedRows = _connect.Count("SELECT COUNT(*) FROM Breakfast_cold");
-			
-			string _returnedQuery = _connect.Select("SELECT Breakfast_cold_item FROM Breakfast_cold", expectedRows, Keywords, Parameters, ParameterValues);
-			string[] Query_Results;
-			string[] Items;
-			Query_Results = _returnedQuery.Split('/');
-			Debug.WriteLine(Query_Results.Length);
-			Items = new string[Query_Results.Length];
+        }
 
-			for (int i = 0; i < Query_Results.Length; i++)
-			{
-
-				Items[i] = Query_Results[i];
-			}
-			
-			this.comboBox1.Items.AddRange(Items);
-		}
-
-		private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
 		{
-			type = "Breakfast_Warm";
-			checkBox1.Checked = false;
-			checkBox3.Checked = false;
-			this.comboBox1.Items.Clear();
+			//type = "Breakfast_Warm";
+			//ColdCheckbox.Checked = false;
+			//HotCheckbox.Checked = false;
+			this.MealSelection.Items.Clear();
 			Keywords = new List<string>();
 			Keywords.Add("Breakfast_warm_item");
 			Parameters = new List<string>();
@@ -122,51 +105,23 @@ namespace MedicTalk
 
 				Items[i] = Query_Results[i];
 			}
-			this.comboBox1.Items.AddRange(Items);
+			this.MealSelection.Items.AddRange(Items);
 		}
 
-		private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        // //////////BLOCKED OUT FOR NOW TODO: REFACTOR OR REMOVE
+        #region unused
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
 		{
-			type = "Breakfast_Hot";
-			checkBox2.Checked = false;
-			checkBox1.Checked = false;
-			this.comboBox1.Items.Clear();
-			Keywords = new List<string>();
-			Keywords.Add("Breakfast_Hot_item");
-			Parameters = new List<string>();
-			Parameters.Add("");
-			ParameterValues = new List<string>();
-			ParameterValues.Add("");
 
-			expectedRows = _connect.Count("SELECT COUNT(*) FROM Breakfast_Hot");
+        }
 
-			string _returnedQuery = _connect.Select("SELECT Breakfast_hot_item FROM Breakfast_Hot", expectedRows, Keywords, Parameters, ParameterValues);
-			string[] Query_Results;
-			string[] Items;
-			Query_Results = _returnedQuery.Split('/');
-			Debug.WriteLine(Query_Results.Length);
-			Items = new string[Query_Results.Length];
-
-			for (int i = 0; i < Query_Results.Length; i++)
-			{
-
-				Items[i] = Query_Results[i];
-			}
-			this.comboBox1.Items.AddRange(Items);
-		}
-
-		private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-		{
-			
-		}
-
-		private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
 		{
 
 		}
 
 		private void button2_Click(object sender, EventArgs e)
-		{
+		{/*
 			Parameters = new List<string>();
 			Parameters.Add("User_id");
 			Parameters.Add("Type_of");
@@ -179,7 +134,7 @@ namespace MedicTalk
 			ParameterValues = new List<string>();
 			ParameterValues.Add(form1.UserIDProperty);
 			ParameterValues.Add(type);
-			ParameterValues.Add(comboBox1.Text);
+			ParameterValues.Add(MealSelection.Text);
 			ParameterValues.Add(form1.FirstNameProperty);
 			ParameterValues.Add(form1.LastNameProperty);
 			ParameterValues.Add(form1.SectionProperty);
@@ -187,7 +142,83 @@ namespace MedicTalk
 			ParameterValues.Add(textBox1.Text);
 
 			_connect.Insert("INSERT INTO Requests (User_id, Type_of, Choice, First_Name, Last_Name, Section, Room, Other_Requests) VALUES (@User_id, @Type_of, @Choice, @First_Name, @Last_Name, @Section, @Room, @Other_Request);", Parameters, ParameterValues);
-			MessageBox.Show("Your request has been acknowledged");
+			MessageBox.Show("Your request has been acknowledged");*/
 		}
-	}
+
+        #endregion
+
+        // Record what meal the resident has chosen
+        private void MealSelectionBox_Changed(object sender, EventArgs e)
+        {
+            _chosenMealName = MealSelection.SelectedItem as string;
+        }
+
+
+
+        // What to do when cold checkbox is checked
+        private void ColdCheckbox_Checked(object sender, EventArgs e)
+        {
+            _HotOrCold = "cold";
+            HotCheckbox.Checked = false;
+            WarmCheckbox.Checked = false;
+
+            Update_ComboxBox();
+        }
+
+
+        // What to do when hot checkbox is checked
+        private void HotCheckBoxChecked(object sender, EventArgs e)
+        {
+            _HotOrCold = "hot";
+            ColdCheckbox.Checked = false;
+            WarmCheckbox.Checked = false;
+
+            Update_ComboxBox();
+        }
+
+        // What to do when hot checkbox is checked
+        private void WarmCheckbox_Checked(object sender, EventArgs e)
+        {
+            _HotOrCold = "warm";
+            ColdCheckbox.Checked = false;
+            HotCheckbox.Checked = false;
+
+            Update_ComboxBox();
+        }
+
+
+
+
+        // Update the combobox so that the correct food types are shown
+
+        private void Update_ComboxBox()
+        {
+            this.MealSelection.Items.Clear();
+
+            //string _returnedQuery = _connect.Select("SELECT Breakfast_warm_item FROM Breakfast_warm", expectedRows, Keywords, Parameters, ParameterValues);
+
+            string THESTATEMENT = "MealType = '" + _mealType + "' AND HotOrCold = '" + _HotOrCold + "';";
+            Console.WriteLine("THE STATEMENT IS" + THESTATEMENT);
+
+            List<string> _foods = new List<string>(_connect.Select(
+                "NEWFood", "FoodName", THESTATEMENT, 1));
+
+            string[] listOfFoods = _foods.ToArray(); // Convert the list to an array so the combobox can display them
+
+            // Have to remove the '/' in each string
+            for (int i = 0; i < listOfFoods.Length; i++)
+            {
+                listOfFoods[i] = listOfFoods[i].Trim(new Char[] { '/' });
+            }
+
+            // Add to combo box
+            this.MealSelection.Items.AddRange(listOfFoods);
+        }
+
+
+        private void Submit_Clicked(object sender, EventArgs e)
+        {
+            Requests_Handler.Add_Food(_chosenMealName, _HotOrCold, _mealType);
+        }
+    }
 }

@@ -72,6 +72,33 @@ namespace MedicTalk
 
         #endregion //  //
 
+
+        /// /////////////////////////////////////////////////////////////////////////
+
+        // <summary>
+        // Insert a request into the table
+        // </summary>
+        public void Insert_Request(string query)
+        {
+            MySqlCommand _command = new MySqlCommand();
+            if (this.OpenConnection())
+            {
+                _command.CommandText = query;
+                _command.Connection = connection;
+
+                Console.WriteLine(query);
+
+                _command.ExecuteNonQuery(); // Execute the command
+            }
+
+            this.CloseConnection();
+        }
+
+
+
+
+
+
         // <summary>
         // Used to insert an entry into the database
         // </summary>
@@ -170,6 +197,7 @@ namespace MedicTalk
 
 
 
+
         // <summary>
         // Used to select an entry/entries in the database. Returns the results as a list of strings
         // </summary>
@@ -202,7 +230,6 @@ namespace MedicTalk
                         {
                             // Make the result a string of all columns seperated by a / 
                             row += mysql_Reader.GetString(i) + "/";
-                            Console.WriteLine("THE UID IS: " + result);
                         }
 
                         result.Add(row); // Add the row to the list
