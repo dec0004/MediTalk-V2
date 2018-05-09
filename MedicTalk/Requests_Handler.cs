@@ -52,35 +52,47 @@ namespace MedicTalk
         }
 
 
-
-
-
-
-
-
-
-
         /// <summary>
         /// Mark a request as complete so it no longer shows
         /// </summary>
-        public static void Complete_Request()
+        /// <param name="residentUID">Resident's user ID - needed to find the row in mysql</param>
+        /// <param name="DateOfRequest">Date of request - needed to find the row in mysql</param>
+        /// <param name="TimeOfRequest">Time of request - needed to find the row in mysql</param>
+        public static bool Complete_Request(string residentUID, string DateOfRequest, string TimeOfRequest)
         {
-
+            // Try marking request as complete and return true if it works
+            try
+            {
+                // TODO: Don't use Delete_Request function in this case
+                _MySQL.Delete_Request(
+                    "UPDATE NEWFoodRequests " +
+                    "SET Completed = 'y' " +
+                    "WHERE UID = '" + residentUID + "' " +
+                    " AND DateOfRequest = '" + DateOfRequest + 
+                    "' AND TimeOfRequest = '" + TimeOfRequest + "';");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
+
         /// <summary>
-        /// Show all requests
+        /// Show all food requests that aren't completed
         /// </summary>
         public static void Show_Requests()
-        {
-            // TODO: Add a refresh button             
+        {          
             if (_MySQL.OpenConnection())
             {
-                // TODO: Seperate the requests list into 2 seperate request lists - 1 for food, and 1 for others.
                 MySqlDataAdapter mySqlDataAdapter_Food = new MySqlDataAdapter(
-                    "SELECT U.UID, U.FirstName, U.LastName, Res.Room, Res.Section, Req.MealType, Req.HotOrCold, Req.MealName, Req.DateOfRequest, Req.TimeOfRequest, Req.Completed FROM NEWUsers U " +
+                    // "SELECT U.UID, U.FirstName, U.LastName, Res.Room, Res.Section, Req.MealType, Req.HotOrCold, Req.MealName, Req.DateOfRequest, Req.TimeOfRequest, Req.Completed FROM NEWUsers U " +
+
+                    "SELECT U.FirstName, U.LastName, Res.Room, Res.Section, Req.MealType, Req.HotOrCold, Req.MealName, Req.Completed, Req.DateOfRequest, Req.TimeOfRequest, U.UID FROM NEWUsers U " +
                     "INNER JOIN NEWResidents Res ON U.UID = Res.UID " +
-                    "INNER JOIN NEWFoodRequests Req ON Res.UID = Req.UID;"
+                    "INNER JOIN NEWFoodRequests Req ON Res.UID = Req.UID " +
+                    "WHERE Completed != 'y' OR Completed IS NULL;" // Only show uncompleted requests
                     , _MySQL.connection);
                 DataTable = new DataTable();
                 mySqlDataAdapter_Food.Fill(DataTable);
@@ -92,6 +104,37 @@ namespace MedicTalk
                 Console.WriteLine("Could not open connection");
             }
         }
+
+
+        /// <summary>
+        /// Show requests that must be done at a specific time
+        /// </summary>
+        public static void Show_Timed_Requests()
+        {            
+            if (_MySQL.OpenConnection())
+            {
+                // Get all requests for alarms and showers
+                // Filter out requests that have already passed 
+                // (ie; don't show a request for an alarm at 9:00 if it's already 10:00)
+                MySqlDataAdapter mySqlDataAdapter_Timed = new MySqlDataAdapter(
+                    "SELECT U.FirstName, U.LastName, Res.Room, Res.Section, Req.TypeOfRequest, Req.TimeToComplete " +
+                    "FROM NEWUsers U " +
+                    "INNER JOIN NEWResidents Res ON U.UID = Res.UID " +
+                    "INNER JOIN NEWTimedRequests Req ON Res.UID = Req.UID " +
+                    "WHERE Req.TimeToComplete >= CURTIME()"
+                    , _MySQL.connection);
+                DataTable = new DataTable();
+                mySqlDataAdapter_Timed.Fill(DataTable);
+
+                _MySQL.CloseConnection();
+            }
+            else
+            {
+                Console.WriteLine("Could not open connection");
+            }
+        }
+
+
 
         /// <summary>
         /// Used to display all alarms
