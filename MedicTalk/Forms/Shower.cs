@@ -43,15 +43,6 @@ namespace MedicTalk
 			MessageBox.Show("A nurse will be with you as soon as possible");
 		}
 
-		private void radioButton1_CheckedChanged(object sender, EventArgs e)
-		{
-			_type = radioButton1.Text;
-		}
-
-		private void radioButton2_CheckedChanged(object sender, EventArgs e)
-		{
-			_type = radioButton2.Text;
-		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -63,36 +54,52 @@ namespace MedicTalk
 			_minute = comboBox2.Text;
 		}
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			_time = _hour + ":" + _minute;
-			Parameters = new List<string>();
-			Parameters.Add("User_id");
-			Parameters.Add("Type_of");
-			Parameters.Add("Choice");
-			Parameters.Add("First_Name");
-			Parameters.Add("Last_Name");
-			Parameters.Add("Section");
-			Parameters.Add("Room");
-			ParameterValues = new List<string>();
-			ParameterValues.Add(form1.UserIDProperty);
-			ParameterValues.Add("Bathing");
-			ParameterValues.Add(_type);
-			ParameterValues.Add(form1.FirstNameProperty);
-			ParameterValues.Add(form1.LastNameProperty);
-			ParameterValues.Add(form1.SectionProperty);
-			ParameterValues.Add(form1.RoomProperty);
-			_time = _hour + ":" + _minute;
-
-			connect.Insert("INSERT INTO Requests (User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (@User_id, @Type_of, @Choice, @First_Name, @Last_Name, @Section, @Room);", Parameters, ParameterValues);
-			MessageBox.Show("Your request has been acknowledged");
-
-		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			homePage.Show();
 			this.Hide();
 		}
-	}
+
+
+        private void Shower_Button_Changed(object sender, EventArgs e)
+        {
+            _type = Shower_Button.Text;
+        }
+
+        private void Bath_Button_Changed(object sender, EventArgs e)
+        {
+            _type = Bath_Button.Text;
+        }
+
+
+        private void Submit_Button_Click(object sender, EventArgs e)
+        {
+
+            Requests_Handler.Add_Timed_Request(_type, _hour + ":" + _minute + ":00");
+            MessageBox.Show("Your request has been acknowledged");
+            /*
+            _time = _hour + ":" + _minute;
+            Parameters = new List<string>();
+            Parameters.Add("User_id");
+            Parameters.Add("Type_of");
+            Parameters.Add("Choice");
+            Parameters.Add("First_Name");
+            Parameters.Add("Last_Name");
+            Parameters.Add("Section");
+            Parameters.Add("Room");
+            ParameterValues = new List<string>();
+            ParameterValues.Add(form1.UserIDProperty);
+            ParameterValues.Add("Bathing");
+            ParameterValues.Add(_type);
+            ParameterValues.Add(form1.FirstNameProperty);
+            ParameterValues.Add(form1.LastNameProperty);
+            ParameterValues.Add(form1.SectionProperty);
+            ParameterValues.Add(form1.RoomProperty);
+            _time = _hour + ":" + _minute;
+
+            connect.Insert("INSERT INTO Requests (User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (@User_id, @Type_of, @Choice, @First_Name, @Last_Name, @Section, @Room);", Parameters, ParameterValues);
+            MessageBox.Show("Your request has been acknowledged");*/
+        }
+    }
 }

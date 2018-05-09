@@ -94,6 +94,24 @@ namespace MedicTalk
             this.CloseConnection();
         }
 
+        // <summary>
+        // Delete a request
+        // </summary>
+        public void Delete_Request(string query)
+        {
+            MySqlCommand _command = new MySqlCommand();
+            if (this.OpenConnection())
+            {
+                _command.CommandText = query;
+                _command.Connection = connection;
+
+                Console.WriteLine(query);
+
+                _command.ExecuteNonQuery(); // Execute the command
+            }
+
+            this.CloseConnection();
+        }
 
 
 

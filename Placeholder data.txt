@@ -1,3 +1,4 @@
+DROP TABLE NewTimedRequests;
 DROP TABLE NEWFoodRequests;
 DROP TABLE NEWOtherRequests;
 DROP TABLE NEWStaff;
@@ -51,6 +52,15 @@ CREATE TABLE NEWFoodRequests (
 	MealName VARCHAR(100),
 	Completed VARCHAR(1),
 	PRIMARY KEY (UID, DateOfRequest, TimeOfRequest),
+	FOREIGN KEY (UID) References NEWUsers(UID)
+) ENGINE=InnoDB;
+
+CREATE TABLE NEWTimedRequests (
+	UID int(10) NOT NULL,
+	TypeOfRequest VARCHAR(100),
+	DateToComplete DATE,
+	TimeToComplete TIME NOT NULL,
+	PRIMARY KEY (UID, TimeToComplete),
 	FOREIGN KEY (UID) References NEWUsers(UID)
 ) ENGINE=InnoDB;
 

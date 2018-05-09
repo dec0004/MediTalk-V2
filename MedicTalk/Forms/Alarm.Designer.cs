@@ -28,160 +28,173 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button1 = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.Youralarm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Remove = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label2 = new System.Windows.Forms.Label();
-			this.button7 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.BackgroundImage = global::MedicTalk.Properties.Resources.Icon_Return;
-			this.button1.Location = new System.Drawing.Point(5, 5);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(89, 85);
-			this.button1.TabIndex = 10;
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.BackgroundImage = global::MedicTalk.Properties.Resources.MediTalk_Heading;
-			this.pictureBox1.Location = new System.Drawing.Point(315, 12);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(171, 41);
-			this.pictureBox1.TabIndex = 11;
-			this.pictureBox1.TabStop = false;
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.BackgroundImage = global::MedicTalk.Properties.Resources.Plain_Background;
-			this.pictureBox2.Location = new System.Drawing.Point(134, 76);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(551, 368);
-			this.pictureBox2.TabIndex = 12;
-			this.pictureBox2.TabStop = false;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(360, 113);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(93, 24);
-			this.label1.TabIndex = 16;
-			this.label1.Text = "Set Alarm";
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(269, 159);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 28);
-			this.comboBox1.TabIndex = 17;
-			this.comboBox1.Text = "Hour";
-			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-			// 
-			// comboBox2
-			// 
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(421, 159);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(121, 28);
-			this.comboBox2.TabIndex = 18;
-			this.comboBox2.Text = "Minutes";
-			this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Hour_Box = new System.Windows.Forms.ComboBox();
+            this.Minute_Box = new System.Windows.Forms.ComboBox();
+            this.AlarmsList = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.Submit_Button = new System.Windows.Forms.Button();
+            this.Youralarm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemoveColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlarmsList)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::MedicTalk.Properties.Resources.Icon_Return;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 55);
+            this.button1.TabIndex = 10;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::MedicTalk.Properties.Resources.MediTalk_Heading;
+            this.pictureBox1.Location = new System.Drawing.Point(210, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(114, 27);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::MedicTalk.Properties.Resources.Plain_Background;
+            this.pictureBox2.Location = new System.Drawing.Point(89, 49);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(367, 239);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(240, 73);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Set Alarm";
+            // 
+            // Hour_Box
+            // 
+            this.Hour_Box.FormattingEnabled = true;
+            this.Hour_Box.Location = new System.Drawing.Point(179, 103);
+            this.Hour_Box.Margin = new System.Windows.Forms.Padding(2);
+            this.Hour_Box.Name = "Hour_Box";
+            this.Hour_Box.Size = new System.Drawing.Size(82, 21);
+            this.Hour_Box.TabIndex = 17;
+            this.Hour_Box.Text = "Hour";
+            this.Hour_Box.SelectedIndexChanged += new System.EventHandler(this.Hour_Changed);
+            // 
+            // Minute_Box
+            // 
+            this.Minute_Box.FormattingEnabled = true;
+            this.Minute_Box.Location = new System.Drawing.Point(281, 103);
+            this.Minute_Box.Margin = new System.Windows.Forms.Padding(2);
+            this.Minute_Box.Name = "Minute_Box";
+            this.Minute_Box.Size = new System.Drawing.Size(82, 21);
+            this.Minute_Box.TabIndex = 18;
+            this.Minute_Box.Text = "Minutes";
+            this.Minute_Box.SelectedIndexChanged += new System.EventHandler(this.Minute_Changed);
+            // 
+            // AlarmsList
+            // 
+            this.AlarmsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AlarmsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Youralarm,
-            this.Remove});
-			this.dataGridView1.Location = new System.Drawing.Point(288, 271);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowTemplate.Height = 28;
-			this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-			this.dataGridView1.TabIndex = 20;
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-			// 
-			// Youralarm
-			// 
-			this.Youralarm.HeaderText = "Your Alarms";
-			this.Youralarm.Name = "Youralarm";
-			// 
-			// Remove
-			// 
-			this.Remove.HeaderText = "Remove?";
-			this.Remove.Name = "Remove";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Bernard MT Condensed", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(334, 235);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(151, 24);
-			this.label2.TabIndex = 21;
-			this.label2.Text = "Previous Alarms";
-			// 
-			// button7
-			// 
-			this.button7.BackColor = System.Drawing.Color.Transparent;
-			this.button7.Image = global::MedicTalk.Properties.Resources.Icon_Request_Emergency;
-			this.button7.Location = new System.Drawing.Point(640, 12);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(148, 36);
-			this.button7.TabIndex = 23;
-			this.button7.UseVisualStyleBackColor = false;
-			this.button7.Click += new System.EventHandler(this.button7_Click);
-			// 
-			// button2
-			// 
-			this.button2.Image = global::MedicTalk.Properties.Resources.Icon_Submitted;
-			this.button2.Location = new System.Drawing.Point(345, 201);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(132, 31);
-			this.button2.TabIndex = 38;
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// Alarm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::MedicTalk.Properties.Resources.Home_Background1;
-			this.ClientSize = new System.Drawing.Size(811, 527);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button7);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.dataGridView1);
-			this.Controls.Add(this.comboBox2);
-			this.Controls.Add(this.comboBox1);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.button1);
-			this.Name = "Alarm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Alarm";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.RemoveColumn});
+            this.AlarmsList.Location = new System.Drawing.Point(150, 172);
+            this.AlarmsList.Margin = new System.Windows.Forms.Padding(2);
+            this.AlarmsList.Name = "AlarmsList";
+            this.AlarmsList.RowTemplate.Height = 28;
+            this.AlarmsList.Size = new System.Drawing.Size(248, 116);
+            this.AlarmsList.TabIndex = 20;
+            this.AlarmsList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Remove_Alarm);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bernard MT Condensed", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(223, 153);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Previous Alarms";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Image = global::MedicTalk.Properties.Resources.Icon_Request_Emergency;
+            this.button7.Location = new System.Drawing.Point(427, 8);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(99, 23);
+            this.button7.TabIndex = 23;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // Submit_Button
+            // 
+            this.Submit_Button.Image = global::MedicTalk.Properties.Resources.Icon_Submitted;
+            this.Submit_Button.Location = new System.Drawing.Point(230, 131);
+            this.Submit_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Submit_Button.Name = "Submit_Button";
+            this.Submit_Button.Size = new System.Drawing.Size(88, 20);
+            this.Submit_Button.TabIndex = 38;
+            this.Submit_Button.UseVisualStyleBackColor = true;
+            this.Submit_Button.Click += new System.EventHandler(this.Submit_Button_Click);
+            // 
+            // Youralarm
+            // 
+            this.Youralarm.DataPropertyName = "TimeToComplete";
+            this.Youralarm.HeaderText = "Your Alarms";
+            this.Youralarm.Name = "Youralarm";
+            // 
+            // RemoveColumn
+            // 
+            this.RemoveColumn.HeaderText = "Remove alarm";
+            this.RemoveColumn.Name = "RemoveColumn";
+            this.RemoveColumn.Width = 88;
+            // 
+            // Alarm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MedicTalk.Properties.Resources.Home_Background1;
+            this.ClientSize = new System.Drawing.Size(541, 343);
+            this.Controls.Add(this.Submit_Button);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.AlarmsList);
+            this.Controls.Add(this.Minute_Box);
+            this.Controls.Add(this.Hour_Box);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Alarm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alarm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlarmsList)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -191,13 +204,13 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Youralarm;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Remove;
+		private System.Windows.Forms.ComboBox Hour_Box;
+		private System.Windows.Forms.ComboBox Minute_Box;
+		private System.Windows.Forms.DataGridView AlarmsList;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button7;
-		private System.Windows.Forms.Button button2;
-	}
+		private System.Windows.Forms.Button Submit_Button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Youralarm;
+        private System.Windows.Forms.DataGridViewButtonColumn RemoveColumn;
+    }
 }

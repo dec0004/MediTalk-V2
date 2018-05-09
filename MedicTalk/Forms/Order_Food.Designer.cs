@@ -1,6 +1,6 @@
 ﻿namespace MedicTalk
 {
-	partial class BreakFast
+	partial class Order_Food
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -34,9 +34,8 @@
             this.ColdCheckbox = new System.Windows.Forms.CheckBox();
             this.WarmCheckbox = new System.Windows.Forms.CheckBox();
             this.HotCheckbox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MealType_Header = new System.Windows.Forms.Label();
+            this.OtherRequests_TextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MealSelection = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -113,38 +112,26 @@
             this.HotCheckbox.UseVisualStyleBackColor = true;
             this.HotCheckbox.CheckedChanged += new System.EventHandler(this.HotCheckBoxChecked);
             // 
-            // label1
+            // MealType_Header
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(248, 60);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Breakfast";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.MealType_Header.AutoSize = true;
+            this.MealType_Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MealType_Header.Location = new System.Drawing.Point(214, 55);
+            this.MealType_Header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MealType_Header.Name = "MealType_Header";
+            this.MealType_Header.Size = new System.Drawing.Size(130, 31);
+            this.MealType_Header.TabIndex = 15;
+            this.MealType_Header.Text = "Breakfast";
             // 
-            // label2
+            // OtherRequests_TextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 86);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "What do you feel like?";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(328, 172);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 101);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.OtherRequests_TextBox.Location = new System.Drawing.Point(328, 172);
+            this.OtherRequests_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.OtherRequests_TextBox.Multiline = true;
+            this.OtherRequests_TextBox.Name = "OtherRequests_TextBox";
+            this.OtherRequests_TextBox.Size = new System.Drawing.Size(98, 101);
+            this.OtherRequests_TextBox.TabIndex = 17;
+            this.OtherRequests_TextBox.TextChanged += new System.EventHandler(this.Requests_Text_Changed);
             // 
             // label3
             // 
@@ -206,7 +193,7 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "MediTalk";
             // 
-            // BreakFast
+            // Order_Food
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,9 +204,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.MealSelection);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.OtherRequests_TextBox);
+            this.Controls.Add(this.MealType_Header);
             this.Controls.Add(this.HotCheckbox);
             this.Controls.Add(this.WarmCheckbox);
             this.Controls.Add(this.ColdCheckbox);
@@ -227,7 +213,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "BreakFast";
+            this.Name = "Order_Food";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -243,13 +229,12 @@
 		private System.Windows.Forms.CheckBox ColdCheckbox;
 		private System.Windows.Forms.CheckBox WarmCheckbox;
 		private System.Windows.Forms.CheckBox HotCheckbox;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label MealType_Header;
+		private System.Windows.Forms.TextBox OtherRequests_TextBox;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ComboBox MealSelection;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Label label9;
-	}
+    }
 }

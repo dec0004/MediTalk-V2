@@ -18,33 +18,37 @@ namespace MedicTalk
 
         public static DataTable DataTable { get => dataTable; set => dataTable = value; }
 
+        /// <summary>
+        /// Add an alarm or shower at a requested date and time
+        /// </summary>
+        public static void Add_Timed_Request(string type, string dateToComplete, string timeToComplete)
+        {
+            _MySQL.Insert_Request("INSERT");
+        }
+        
+        /// <summary>
+        /// Add an alarm or shower at a requested time
+        /// </summary>
+        public static void Add_Timed_Request(string type, string timeToComplete)
+        {
+            // Insert the time
+            _MySQL.Insert_Request(
+                "INSERT NEWTimedRequests (UID, TypeOfRequest, TimeToComplete) " +
+                "VALUES ('" + Mysql_User_Handler.User_ID + "', '" + type + "', '" + timeToComplete + "');");
+        }
 
 
-
-
-
-
-
-        //////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////
 
         /// <summary>
         /// Add food request made by the resident into the database
         /// </summary>
         public static void Add_Food(string foodName, string HotOrCold, string MealType)
         {
-
             // Insert the request into the table
             _MySQL.Insert_Request(
                 "INSERT INTO NEWFoodRequests (UID, MealType, HotOrCold, MealName, TimeOfRequest, DateOfRequest) " +
                 "Values (" + Mysql_User_Handler.User_ID + ", '" + MealType + "', '" + HotOrCold + "', '" + foodName + 
                 "', NOW(), CURDATE());");
-
-
-            //INSERT INTO NEWFoodRequests (UID, MealType, HotOrCold, MealName, TimeOfRequest, DateOfRequest) 
-            //VALUES ("5", "Breakfast", "Hot", "Bacon and egg toast", NOW(), CURDATE());
         }
 
 
@@ -81,10 +85,52 @@ namespace MedicTalk
                 DataTable = new DataTable();
                 mySqlDataAdapter_Food.Fill(DataTable);
 
+                _MySQL.CloseConnection();
             }
             else
             {
                 Console.WriteLine("Could not open connection");
+            }
+        }
+
+        /// <summary>
+        /// Used to display all alarms
+        /// </summary>
+        public static void Show_Alarms()
+        {
+            if (_MySQL.OpenConnection())
+            {
+                // Search for all alarms a specific user has made
+                MySqlDataAdapter mySqlDataAdapter_Alarm = new MySqlDataAdapter(
+                    "SELECT TimeToComplete FROM NEWTimedRequests " +
+                    "WHERE TypeOfRequest = 'alarm' " +
+                    "AND UID = '" + Mysql_User_Handler.User_ID + "';", _MySQL.connection);
+
+                DataTable = new DataTable();
+                mySqlDataAdapter_Alarm.Fill(DataTable);
+
+                _MySQL.CloseConnection();
+            }
+        }
+        
+        /// <summary>
+        /// Deletes a given alarm. Notifies the caller if it was able
+        /// to delete the alarm.
+        /// </summary>
+        public static bool Delete_Alarm(string time)
+        {
+            // Try deleting the alarm and return true if it works
+            try
+            {
+                _MySQL.Delete_Request(
+                    "DELETE FROM NEWTimedRequests " +
+                    "WHERE UID = '" + Mysql_User_Handler.User_ID + "' " +
+                    " AND TimeToComplete = '" + time + "';");
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

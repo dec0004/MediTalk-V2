@@ -61,12 +61,6 @@
     <Compile Include="Forms\Alarm.Designer.cs">
       <DependentUpon>Alarm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Drinks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Drinks.Designer.cs">
-      <DependentUpon>Drinks.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Forgot_UserName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,11 +79,11 @@
     <Compile Include="Forms\Forgot_Password.Designer.cs">
       <DependentUpon>Forgot_Password.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BreakFast.cs">
+    <Compile Include="Forms\Order_Food.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BreakFast.Designer.cs">
-      <DependentUpon>BreakFast.cs</DependentUpon>
+    <Compile Include="Forms\Order_Food.Designer.cs">
+      <DependentUpon>Order_Food.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HomePage.cs">
       <SubType>Form</SubType>
@@ -102,12 +96,6 @@
     </Compile>
     <Compile Include="Forms\List_Of_Requests.Designer.cs">
       <DependentUpon>List_Of_Requests.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Lunch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Lunch.Designer.cs">
-      <DependentUpon>Lunch.cs</DependentUpon>
     </Compile>
     <Compile Include="Mysql_Connect.cs" />
     <Compile Include="Mysql_User_Handler.cs" />
@@ -132,11 +120,8 @@
     <EmbeddedResource Include="Forms\Alarm.resx">
       <DependentUpon>Alarm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BreakFast.resx">
-      <DependentUpon>BreakFast.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Drinks.resx">
-      <DependentUpon>Drinks.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Order_Food.resx">
+      <DependentUpon>Order_Food.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forgot_Password.resx">
       <DependentUpon>Forgot_Password.cs</DependentUpon>
@@ -152,9 +137,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\List_Of_Requests.resx">
       <DependentUpon>List_Of_Requests.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Lunch.resx">
-      <DependentUpon>Lunch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

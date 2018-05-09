@@ -12,8 +12,6 @@ namespace MedicTalk
 {
 	public partial class Alarm : Form
 	{
-		List<string> Parameters;
-		List<string> ParameterValues;
 		public HomePage homePage;
 		public Mysql_Connect _connect;
 		public Form1 form1;
@@ -37,8 +35,11 @@ namespace MedicTalk
 				_minutes[i] = i.ToString();
 			}
 
-			this.comboBox1.Items.AddRange(_Hour);
-			this.comboBox2.Items.AddRange(_minutes);
+			this.Hour_Box.Items.AddRange(_Hour);
+			this.Minute_Box.Items.AddRange(_minutes);
+
+            // Load current alarms the user has already
+            Display_Alarms();
 		}
 
 		private void button7_Click(object sender, EventArgs e)
@@ -52,36 +53,52 @@ namespace MedicTalk
 			this.Hide();
 		}
 
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			Hour = comboBox1.Text;
-		}
+        // Once user has clicked on submit
+        private void Submit_Button_Click(object sender, EventArgs e)
+        {
+            Requests_Handler.Add_Timed_Request("alarm", Hour + ":" + Minute + ":00");
+            MessageBox.Show("You have added an alarm");
 
-		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			Minute = comboBox2.Text;
-		}
+            // Reload the alarms so the datagridview is updated
+            Display_Alarms();
+        }
 
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
 
-		}
+        // Once user has changed the hour
+        private void Hour_Changed(object sender, EventArgs e)
+        {
+            Hour = Hour_Box.Text;
+        }
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			Parameters = new List<string>();
-			Parameters.Add("User_id");
-			Parameters.Add("Hours");
-			Parameters.Add("Minutes");
 
-			ParameterValues = new List<string>();
-			ParameterValues.Add(form1.UserIDProperty);
-			ParameterValues.Add(Hour);
-			ParameterValues.Add(Minute);
-	
+        // Once user changed the minute
+        private void Minute_Changed(object sender, EventArgs e)
+        {
+            Minute = Minute_Box.Text;
+        }
 
-			_connect.Insert("INSERT INTO Alarms (User_id, Alarm_time, Alarm_date) VALUES (@User_id, @Hours, @Minutes);", Parameters, ParameterValues);
-			MessageBox.Show("You have added an alarm");
-		}
-	}
+
+        // Remove an alarm once a user has clicked on it
+        private void Remove_Alarm(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // Get the value of the 1st column for the alarm
+            // that the user wants to delete
+            int TheRow = e.RowIndex;
+            string alarm_time = AlarmsList.Rows[TheRow].Cells[1].Value.ToString();
+
+            // If the alarm was deleted refresh the datagridview
+            if (Requests_Handler.Delete_Alarm(alarm_time))
+            {
+                Display_Alarms();
+            }
+        }
+
+        // Load all alarms
+        private void Display_Alarms()
+        {
+            Requests_Handler.Show_Alarms();
+            AlarmsList.DataSource = Requests_Handler.DataTable;
+        }
+    }
 }

@@ -13,10 +13,8 @@ namespace MedicTalk
 	public partial class HomePage : Form
 	{
 		private Form1 form1;
-		private Drinks _drink;
-		private Alarm _alarm;
-		private BreakFast _breakfast;
-		private Lunch _lunch;
+        private Alarm _alarm;
+		private Order_Food _orderFood;
 		private Shower _shower;
 		public Mysql_Connect _connect;
 		public Request_Emergency _emergencyRequest;
@@ -55,35 +53,12 @@ namespace MedicTalk
 			
 		}
 
-		//Drinks Icon
-		private void button9_Click(object sender, EventArgs e)
-		{
-			_drink = new MedicTalk.Drinks(this,_connect, form1);
-			this.Hide();
-			_drink.Show();
-		}
-
 		//Alarm Icon
 		private void button6_Click(object sender, EventArgs e)
 		{
 			_alarm = new MedicTalk.Alarm(this, _connect, form1);
 			this.Hide();
 			_alarm.Show();
-		}
-
-		//Breakfast Icon
-		private void button2_Click(object sender, EventArgs e)
-		{
-			_breakfast = new MedicTalk.BreakFast(this, _connect, form1, _emergencyRequest);
-			this.Hide();
-			_breakfast.Show();
-		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			_lunch = new MedicTalk.Lunch(this, _connect, form1);
-			this.Hide();
-			_lunch.Show();
 		}
 
 		private void button8_Click(object sender, EventArgs e)
@@ -100,11 +75,39 @@ namespace MedicTalk
 			_shower.Show();
 		}
 
-		private void button3_Click_1(object sender, EventArgs e)
-		{
-			_lunch = new MedicTalk.Lunch(this, _connect, form1);
-			this.Hide();
-			_lunch.Show();
-		}
-	}
+
+        // Request breakfast
+        private void BreakfastButton_Click(object sender, EventArgs e)
+        {
+            _orderFood = new MedicTalk.Order_Food(this, _connect, form1, _emergencyRequest, "breakfast");
+            this.Hide();
+            _orderFood.Show();
+        }
+
+        // Request Lunch
+        private void LunchButton_Click(object sender, EventArgs e)
+        {
+            _orderFood = new MedicTalk.Order_Food(this, _connect, form1, _emergencyRequest, "lunch");
+            this.Hide();
+            _orderFood.Show();
+        }
+
+        // Request dinner
+        private void DinnerButton_Click(object sender, EventArgs e)
+        {
+            _orderFood = new MedicTalk.Order_Food(this, _connect, form1, _emergencyRequest, "dinner");
+            this.Hide();
+            _orderFood.Show();
+        }
+
+        // Request drinks
+        private void DrinkButton_Click(object sender, EventArgs e)
+        {
+            _orderFood = new MedicTalk.Order_Food(this, _connect, form1, _emergencyRequest, "drink");
+            this.Hide();
+            _orderFood.Show();
+        }
+
+
+    }
 }
