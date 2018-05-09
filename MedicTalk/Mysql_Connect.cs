@@ -9,21 +9,28 @@ using System.Diagnostics;
 namespace MedicTalk
 {
 
-	public class Mysql_Connect
+    // This class will handle all communication to the SQL server. Other classes
+    // that need to communicate to the server will do so through this class.
+    public class Mysql_Connect
 	{
 		private string _myConnectionString;
-		private MySqlConnection connection;
-		private List<string>[] values;
+		public MySqlConnection connection;
 		private string queryResult;
 		private string rows;
-		public Mysql_Connect()
+
+
+        // Stores functionality required to connect to the database
+        #region Connection related functions
+        public Mysql_Connect()
 		{
 			_myConnectionString = "server=192.185.16.222;database=dec0004_MediTalk;uid=dec0004_access; pwd=321xar22j;";
 			connection = new MySqlConnection(_myConnectionString);
 		}
 
-
-		public bool OpenConnection()
+        // <summary>
+        // Try connect to the server. If it can't connect, provide an error message
+        // </summary>
+        public bool OpenConnection()
 		{
 			try
 			{
@@ -46,7 +53,10 @@ namespace MedicTalk
 			}
 		}
 
-		public bool CloseConnection()
+        // <summary>
+        // Try close connection to the server. If it can't, provide an error message
+        // </summary>
+        public bool CloseConnection()
 		{
 			try
 			{
@@ -60,37 +70,57 @@ namespace MedicTalk
 			}
 		}
 
-		public bool Login(string _inputCommand, string user, string pass)
-		{
-			
-				MySqlCommand _command = new MySqlCommand();
+        #endregion //  //
 
-			if (this.OpenConnection() == true)
-			{
-				_command.CommandText = _inputCommand;
-				_command.Parameters.AddWithValue("@user", user);
-				_command.Parameters.AddWithValue("@password", pass);
-				_command.Connection = connection;
-				MySqlDataReader login = _command.ExecuteReader();
 
-				if (login.Read())
-				{
-					login.Close();
-					this.CloseConnection();
-					return true;
-				}
-				else
-				{
-					login.Close();
-					this.CloseConnection();
-					return false;
-				}
-			}
-			return false;
+        /// /////////////////////////////////////////////////////////////////////////
 
-		}
+        // <summary>
+        // Insert a request into the table
+        // </summary>
+        public void Insert_Request(string query)
+        {
+            MySqlCommand _command = new MySqlCommand();
+            if (this.OpenConnection())
+            {
+                _command.CommandText = query;
+                _command.Connection = connection;
 
-		public void Insert(string _inputCommand, List<string> parameterKey, List<string> parameterValues)
+                Console.WriteLine(query);
+
+                _command.ExecuteNonQuery(); // Execute the command
+            }
+
+            this.CloseConnection();
+        }
+
+        // <summary>
+        // Delete a request
+        // </summary>
+        public void Delete_Request(string query)
+        {
+            MySqlCommand _command = new MySqlCommand();
+            if (this.OpenConnection())
+            {
+                _command.CommandText = query;
+                _command.Connection = connection;
+
+                Console.WriteLine(query);
+
+                _command.ExecuteNonQuery(); // Execute the command
+            }
+
+            this.CloseConnection();
+        }
+
+
+
+
+
+        // <summary>
+        // Used to insert an entry into the database
+        // </summary>
+        public void Insert(string _inputCommand, List<string> parameterKey, List<string> parameterValues)
 		{
 
 			MySqlCommand _command = new MySqlCommand();
@@ -116,6 +146,11 @@ namespace MedicTalk
 			}
 		}
 
+
+
+        // <summary>
+        // Counts amount of rows for a select statement
+        // </summary>
 		public string Count(string _inputCommand)
 		{
 			MySqlCommand _command = new MySqlCommand();
@@ -137,12 +172,102 @@ namespace MedicTalk
 			this.CloseConnection();
 			return rows;
 		}
-		public void Update()
+
+        // <summary>
+        // Used to update an entry in the database
+        // </summary>
+        public void Update()
 		{
 
 		}
 
-		public string Select(string _inputCommand, string _expectedRows, List<string> _keywords, List<string> parameterKey, List<string> parameterValues)
+
+
+        // <summary>
+        // Checks if any rows of data exists for the given query.
+        // </summary>
+        public bool DataExists(string tableName, string statementToCheck)
+        {
+            MySqlCommand _command = new MySqlCommand();
+            string query = "SELECT * FROM " + tableName + " WHERE " + statementToCheck + ";";
+            bool dataExists = false; // Will be returned at the end
+
+            if (this.OpenConnection())
+            {
+                _command.CommandText = query;
+                _command.Connection = connection;
+
+                Console.WriteLine(query);
+
+                MySqlDataReader mysql_Reader = _command.ExecuteReader();
+                
+                
+                if (mysql_Reader.HasRows)
+                {
+                    dataExists = true;
+                }
+            }
+
+            this.CloseConnection(); // Must close connection after mysql_Reader returns the result
+
+            return dataExists; // Return whether theres data or not.
+        }
+
+
+
+
+        // <summary>
+        // Used to select an entry/entries in the database. Returns the results as a list of strings
+        // </summary>
+        // Parameters - tableName - Table to search in
+        // Parameters - columns - Columns to display
+        // Parameters - statementToCheck - The statement to check after the WHERE in SQL
+        // Parameters - expectedAmtOfColumns - The amount of columns the result should return
+        public List<string> Select(string tableName, string nameOfColumns, string statementToCheck, int expectedAmtOfColumns)
+        {
+            MySqlCommand _command = new MySqlCommand();
+            string query = "SELECT " + nameOfColumns + " FROM " + tableName + " WHERE " + statementToCheck + ";";
+            List<string> result = new List<string>(); // Will store all the returned data
+
+            if (this.OpenConnection())
+            {
+                _command.CommandText = query;
+                _command.Connection = connection;
+
+                Console.WriteLine(query);
+                
+                MySqlDataReader mysql_Reader = _command.ExecuteReader();
+
+                // Only grab data if there's any available rows for the query
+                if (mysql_Reader.HasRows)
+                {
+                    while (mysql_Reader.Read())
+                    {
+                        string row = ""; // Will store the row data, that will then be added to the list later
+                        for (int i = 0; i < expectedAmtOfColumns; i++)
+                        {
+                            // Make the result a string of all columns seperated by a / 
+                            row += mysql_Reader.GetString(i) + "/";
+                        }
+
+                        result.Add(row); // Add the row to the list
+                    }
+                }
+
+            }
+
+            Console.WriteLine(query);
+            this.CloseConnection();
+
+            return result;
+        }
+
+
+
+        // <summary>
+        // Used to select an entry in the database
+        // </summary>
+        public string Select(string _inputCommand, string _expectedRows, List<string> _keywords, List<string> parameterKey, List<string> parameterValues)
 		{
 			queryResult = "";
 			MySqlCommand _command = new MySqlCommand();
@@ -178,7 +303,7 @@ namespace MedicTalk
 							}
 					}
 				}
-				else //if more than one row is epected it returns all rows
+				else // if more than one row is epected it returns all rows
 				{
 					MySqlDataReader _reader = _command.ExecuteReader();
 
@@ -198,10 +323,9 @@ namespace MedicTalk
 			return queryResult.Remove(queryResult.Length - 1); ;
 		}
 
-		public void Delete()
+
+        public void Delete()
 		{
 		}
-
-
 	}
 }

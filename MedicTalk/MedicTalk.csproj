@@ -55,104 +55,98 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alarm.cs">
+    <Compile Include="Forms\Alarm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alarm.Designer.cs">
+    <Compile Include="Forms\Alarm.Designer.cs">
       <DependentUpon>Alarm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Drinks.cs">
+    <Compile Include="Forms\Forgot_UserName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Drinks.Designer.cs">
-      <DependentUpon>Drinks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forgot_UserName.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forgot_UserName.Designer.cs">
+    <Compile Include="Forms\Forgot_UserName.Designer.cs">
       <DependentUpon>Forgot_UserName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forgot_Password.cs">
+    <Compile Include="Forms\Forgot_Password.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forgot_Password.Designer.cs">
+    <Compile Include="Forms\Forgot_Password.Designer.cs">
       <DependentUpon>Forgot_Password.cs</DependentUpon>
     </Compile>
-    <Compile Include="BreakFast.cs">
+    <Compile Include="Forms\Order_Food.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BreakFast.Designer.cs">
-      <DependentUpon>BreakFast.cs</DependentUpon>
+    <Compile Include="Forms\Order_Food.Designer.cs">
+      <DependentUpon>Order_Food.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="Forms\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
+    <Compile Include="Forms\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lunch.cs">
+    <Compile Include="Forms\List_Of_Requests.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lunch.Designer.cs">
-      <DependentUpon>Lunch.cs</DependentUpon>
+    <Compile Include="Forms\List_Of_Requests.Designer.cs">
+      <DependentUpon>List_Of_Requests.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mysql_connect_test.cs" />
     <Compile Include="Mysql_Connect.cs" />
+    <Compile Include="Mysql_User_Handler.cs" />
+    <Compile Include="Mysql_User_Handler_Unittest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Request_Emergency.cs" />
-    <Compile Include="Shower.cs">
+    <Compile Include="Forms\Request_Emergency.cs" />
+    <Compile Include="Forms\Shower.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shower.Designer.cs">
+    <Compile Include="Forms\Shower.Designer.cs">
       <DependentUpon>Shower.cs</DependentUpon>
     </Compile>
-    <Compile Include="Visitor.cs">
+    <Compile Include="Forms\Visitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Visitor.Designer.cs">
+    <Compile Include="Forms\Visitor.Designer.cs">
       <DependentUpon>Visitor.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Alarm.resx">
+    <Compile Include="Requests_Handler.cs" />
+    <Compile Include="Requests_Handler_Unittest.cs" />
+    <EmbeddedResource Include="Forms\Alarm.resx">
       <DependentUpon>Alarm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BreakFast.resx">
-      <DependentUpon>BreakFast.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Order_Food.resx">
+      <DependentUpon>Order_Food.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Drinks.resx">
-      <DependentUpon>Drinks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forgot_Password.resx">
+    <EmbeddedResource Include="Forms\Forgot_Password.resx">
       <DependentUpon>Forgot_Password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forgot_UserName.resx">
+    <EmbeddedResource Include="Forms\Forgot_UserName.resx">
       <DependentUpon>Forgot_UserName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
+    <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lunch.resx">
-      <DependentUpon>Lunch.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\List_Of_Requests.resx">
+      <DependentUpon>List_Of_Requests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shower.resx">
+    <EmbeddedResource Include="Forms\Shower.resx">
       <DependentUpon>Shower.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Visitor.resx">
+    <EmbeddedResource Include="Forms\Visitor.resx">
       <DependentUpon>Visitor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
