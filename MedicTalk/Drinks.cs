@@ -23,7 +23,8 @@ namespace MedicTalk
 		List<string> Keywords;
 		public string expectedRows;
 		private string type;
-		public Drinks(HomePage _homePage, Mysql_Connect connect, Form1 _form1)
+		private Request_Emergency _request_emerg;
+		public Drinks(HomePage _homePage, Mysql_Connect connect, Form1 _form1, Request_Emergency request_emerg)
 		{
 			InitializeComponent();
 			InitializeComponent();
@@ -32,6 +33,7 @@ namespace MedicTalk
 			homePage = _homePage;
 			diningChoice = "";
 			type = "";
+			_request_emerg = request_emerg;
 		}
 
 		private void label1_Click(object sender, EventArgs e)
@@ -102,6 +104,11 @@ namespace MedicTalk
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			_request_emerg.CallRequest();
 		}
 	}
 }

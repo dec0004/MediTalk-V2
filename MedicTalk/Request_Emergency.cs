@@ -36,7 +36,7 @@ namespace MedicTalk
 			ParameterValues.Add(form1.LastNameProperty);
 			ParameterValues.Add(form1.SectionProperty);
 			ParameterValues.Add(form1.RoomProperty);
-			connect.Insert("INSERT INTO Requests (Request_id, User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (Default, @Type_of, 'Emergency Request', 'Emergency', '@First_Name', '@Last_Name', '@Section', '@Room')", Parameters, ParameterValues);
+			connect.Insert("INSERT INTO Requests (Request_id, User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (Default, @Type_of, 'Emergency Request', 'Emergency', @First_Name, @Last_Name, @Section, @Room)", Parameters, ParameterValues);
 			
 		}
 

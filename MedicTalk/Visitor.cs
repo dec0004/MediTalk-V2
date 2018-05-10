@@ -23,7 +23,8 @@ namespace MedicTalk
 		public string _time;
 		List<string> Parameters;
 		List<string> ParameterValues;
-		public Visitor(HomePage _homePage, Mysql_Connect connect, Form1 _form1)
+		Request_Emergency _request_emerg;
+		public Visitor(HomePage _homePage, Mysql_Connect connect, Form1 _form1, Request_Emergency requestEmergency)
 		{
 			InitializeComponent();
 			this._homePage = _homePage;
@@ -35,7 +36,7 @@ namespace MedicTalk
 			_minute = "";
 			_date = "";
 			_time = "";
-
+			_request_emerg = requestEmergency;
 			string[] _hours = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" };
 			this.comboBox1.Items.AddRange(_hours);
 			string[] _minutes = new string[] { "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55" };
@@ -46,6 +47,7 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+			_request_emerg.CallRequest();
 		}
 
 

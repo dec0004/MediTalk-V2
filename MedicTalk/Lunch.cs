@@ -23,9 +23,9 @@ namespace MedicTalk
 		public string diningChoice;
 		List<string> Keywords;
 		public string expectedRows;
-		private HomePage _home;
 		private string type;
-		public Lunch(HomePage _homePage, Mysql_Connect connect, Form1 _form1)
+		Request_Emergency _request_emerg;
+		public Lunch(HomePage _homePage, Mysql_Connect connect, Form1 _form1, Request_Emergency request_emerg)
 		{
 			InitializeComponent();
 			form1 = _form1;
@@ -33,6 +33,7 @@ namespace MedicTalk
 			homePage = _homePage;
 			diningChoice = "";
 			type = "";
+			_request_emerg = request_emerg;
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,11 +44,12 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+			_request_emerg.CallRequest();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			_home.Show();
+			homePage.Show();
 			this.Hide();
 		}
 

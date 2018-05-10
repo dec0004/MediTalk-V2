@@ -21,8 +21,8 @@ namespace MedicTalk
 		public string _type;
 		List<string> Parameters;
 		List<string> ParameterValues;
-
-		public Shower(HomePage _homePage, Mysql_Connect _connect, Form1 _form1)
+		Request_Emergency _request_emerg;
+		public Shower(HomePage _homePage, Mysql_Connect _connect, Form1 _form1, Request_Emergency request_emergency)
 		{
 			_hour = "";
 			_minute = "";
@@ -36,11 +36,13 @@ namespace MedicTalk
 			this.comboBox1.Items.AddRange(_hours);
 			string[] _minutes = new string[] { "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55" };
 			this.comboBox2.Items.AddRange(_minutes);
+			_request_emerg = request_emergency;
 		}
 
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+			_request_emerg.CallRequest();
 		}
 
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)

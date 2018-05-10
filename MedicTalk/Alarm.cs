@@ -19,8 +19,9 @@ namespace MedicTalk
 		public Form1 form1;
 		public string Hour;
 		public string Minute;
+		private Request_Emergency _requestEmerg;
 
-		public Alarm(HomePage _homePage, Mysql_Connect connect, Form1 _form1)
+		public Alarm(HomePage _homePage, Mysql_Connect connect, Form1 _form1, Request_Emergency request_emerg)
 		{
 			InitializeComponent();
 			string[] _Hour = new string[24];
@@ -28,6 +29,8 @@ namespace MedicTalk
 			form1 = _form1;
 			_connect = connect;
 			homePage = _homePage;
+			_requestEmerg = request_emerg;
+
 			for (int i = 0; i < _Hour.Length; i++)
 			{
 				_Hour[i] = i.ToString();
@@ -44,6 +47,7 @@ namespace MedicTalk
 		private void button7_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
+			_requestEmerg.CallRequest();
 		}
 
 		private void button1_Click(object sender, EventArgs e)

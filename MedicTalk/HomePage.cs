@@ -58,7 +58,7 @@ namespace MedicTalk
 		//Drinks Icon
 		private void button9_Click(object sender, EventArgs e)
 		{
-			_drink = new MedicTalk.Drinks(this,_connect, form1);
+			_drink = new MedicTalk.Drinks(this,_connect, form1, _emergencyRequest);
 			this.Hide();
 			_drink.Show();
 		}
@@ -66,7 +66,7 @@ namespace MedicTalk
 		//Alarm Icon
 		private void button6_Click(object sender, EventArgs e)
 		{
-			_alarm = new MedicTalk.Alarm(this, _connect, form1);
+			_alarm = new MedicTalk.Alarm(this, _connect, form1, _emergencyRequest);
 			this.Hide();
 			_alarm.Show();
 		}
@@ -81,28 +81,28 @@ namespace MedicTalk
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			_lunch = new MedicTalk.Lunch(this, _connect, form1);
+			_lunch = new MedicTalk.Lunch(this, _connect, form1, _emergencyRequest);
 			this.Hide();
 			_lunch.Show();
 		}
 
 		private void button8_Click(object sender, EventArgs e)
 		{
-			_visitor = new MedicTalk.Visitor(this, _connect, form1);
+			_visitor = new MedicTalk.Visitor(this, _connect, form1, _emergencyRequest);
 			this.Hide();
 			_visitor.Show();
 		}
 
 		private void button5_Click(object sender, EventArgs e)
 		{
-			_shower = new MedicTalk.Shower(this, _connect, form1);
+			_shower = new MedicTalk.Shower(this, _connect, form1, _emergencyRequest);
 			this.Hide();
 			_shower.Show();
 		}
 
 		private void button3_Click_1(object sender, EventArgs e)
 		{
-			_lunch = new MedicTalk.Lunch(this, _connect, form1);
+			_lunch = new MedicTalk.Lunch(this, _connect, form1, _emergencyRequest);
 			this.Hide();
 			_lunch.Show();
 		}
