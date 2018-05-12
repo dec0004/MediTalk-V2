@@ -20,11 +20,17 @@ namespace MedicTalk
         // Keeps track of the kind of user (Resident, staff, etc) that's logged in
         public static string UserType
         {
-            get => _userType;
+            get
+			{
+				return _userType;
+			}
         }
         public static string User_ID
         {
-            get => _user_ID;
+            get
+			{
+				return _user_ID;
+			}
         }
 
 

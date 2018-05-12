@@ -27,6 +27,19 @@ namespace MedicTalk
 			_connect = connect;
 			_emergencyRequest = new Request_Emergency(_connect, form1);
 
+			////Initialize button icons to fit button size
+			BreakFast_Button.BackgroundImageLayout = ImageLayout.Stretch;
+			LunchButton.BackgroundImageLayout = ImageLayout.Stretch;
+			Dinner_Button.BackgroundImageLayout = ImageLayout.Stretch;
+			button9.BackgroundImageLayout = ImageLayout.Stretch;
+			button4.BackgroundImageLayout = ImageLayout.Stretch;
+			button5.BackgroundImageLayout = ImageLayout.Stretch;
+			button6.BackgroundImageLayout = ImageLayout.Stretch;
+		
+			button8.BackgroundImageLayout = ImageLayout.Stretch;
+			button10.BackgroundImageLayout = ImageLayout.Stretch;
+			
+
 		}
 
 		//Logout button
@@ -45,13 +58,6 @@ namespace MedicTalk
 			
 		}
 
-		//Emergency Button
-		private void button7_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show("A nurse will be with you as soon as possible");
-			_emergencyRequest.CallRequest();
-			
-		}
 
 		//Alarm Icon
 		private void button6_Click(object sender, EventArgs e)
@@ -81,7 +87,8 @@ namespace MedicTalk
         {
             _orderFood = new MedicTalk.Order_Food(this, _connect, form1, _emergencyRequest, "breakfast");
             this.Hide();
-            _orderFood.Show();
+			_orderFood.Show();
+
         }
 
         // Request Lunch
@@ -107,7 +114,12 @@ namespace MedicTalk
             this.Hide();
             _orderFood.Show();
         }
+		
 
-
-    }
+		private void button3_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("A nurse will be with you as soon as possible");
+			_emergencyRequest.CallRequest();
+		}
+	}
 }

@@ -17,8 +17,7 @@ namespace MedicTalk
 	public partial class Form1 : Form
 	{
 		private bool loggedIn;
-		Forgot_Password FGot_Pass;
-		Forgot_UserName FGot_User;
+
 		HomePage _HomePage;
         List_Of_Requests _requestsList;
 		private string User_Name;
@@ -48,7 +47,7 @@ namespace MedicTalk
 			_section = "";
 		}
 
-        #region Unimportant functions
+       // #region Unimportant functions
         private void Username_Textbox_TextChanged(object sender, EventArgs e)
         {
 
@@ -61,27 +60,9 @@ namespace MedicTalk
         }
 
 
-		private void Forgot_UserName_Click(object sender, EventArgs e)
-		{
-			
-					FGot_User = new MedicTalk.Forgot_UserName();
-					this.Hide();
-					FGot_User.Show();
-					_connect = new Mysql_Connect();
+	
 
-		}
-
-
-		private void Forgot_Password_Click(object sender, EventArgs e)
-		{
-			this.Hide();
-			FGot_Pass.Show();
-		}
-        #endregion
-
-        // <summary>
-        // Checks if user can log in
-        // </summary>
+	
 
         private void Login_Click(object sender, EventArgs e)
         {

@@ -17,6 +17,7 @@ namespace MedicTalk
 		public Form1 form1;
 		public string Hour;
 		public string Minute;
+		public Request_Emergency _emergencyRequest;
 
 		public Alarm(HomePage _homePage, Mysql_Connect connect, Form1 _form1)
 		{
@@ -26,6 +27,8 @@ namespace MedicTalk
 			form1 = _form1;
 			_connect = connect;
 			homePage = _homePage;
+			_emergencyRequest = new Request_Emergency(_connect, form1);
+
 			for (int i = 0; i < _Hour.Length; i++)
 			{
 				_Hour[i] = i.ToString();
@@ -37,15 +40,11 @@ namespace MedicTalk
 
 			this.Hour_Box.Items.AddRange(_Hour);
 			this.Minute_Box.Items.AddRange(_minutes);
-
-            // Load current alarms the user has already
-            Display_Alarms();
+			button1.BackgroundImageLayout = ImageLayout.Stretch;
+			// Load current alarms the user has already
+			Display_Alarms();
 		}
 
-		private void button7_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show("A nurse will be with you as soon as possible");
-		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -100,5 +99,11 @@ namespace MedicTalk
             Requests_Handler.Show_Alarms();
             AlarmsList.DataSource = Requests_Handler.DataTable;
         }
-    }
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("A nurse will be with you as soon as possible");
+			_emergencyRequest.CallRequest();
+		}
+	}
 }

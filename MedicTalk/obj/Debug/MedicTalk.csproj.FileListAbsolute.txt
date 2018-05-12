@@ -35,12 +35,8 @@ C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MySql.Data
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MySql.Data.xml
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.csprojResolveAssemblyReference.cache
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Alarm.resources
-C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.BreakFast.resources
-C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Forgot_Password.resources
-C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Forgot_UserName.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Form1.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.HomePage.resources
-C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Lunch.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Properties.Resources.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Shower.resources
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Visitor.resources
@@ -50,7 +46,6 @@ C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\MySql.Web.
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\nunit.framework.dll
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\nunit.framework.pdb
 C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\bin\Debug\nunit.framework.xml
-C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Drinks.resources
 H:\Dev1\HD\MediTalk\MediTalk\MedicTalk\bin\Debug\MedicTalk.exe.config
 H:\Dev1\HD\MediTalk\MediTalk\MedicTalk\bin\Debug\MedicTalk.exe
 H:\Dev1\HD\MediTalk\MediTalk\MedicTalk\bin\Debug\MedicTalk.pdb
@@ -148,3 +143,5 @@ C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.exe
 C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.pdb
 C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.List_Of_Requests.resources
 C:\Users\burak\Desktop\LatestMediTalk\MediTalk\MedicTalk\obj\Debug\MedicTalk.Order_Food.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.Order_Food.resources
+C:\Users\Jordan\Documents\Swinburne\DTAP\MediTalk\MedicTalk\obj\Debug\MedicTalk.List_Of_Requests.resources

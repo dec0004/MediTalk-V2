@@ -16,12 +16,22 @@ namespace MedicTalk
         static Mysql_Connect _MySQL = new Mysql_Connect();
         private static DataTable dataTable;
 
-        public static DataTable DataTable { get => dataTable; set => dataTable = value; }
+        public static DataTable DataTable
+		{
+			get
+			{
+				return dataTable;
+			}
+			set
+			{
+				dataTable = value;
+			}
+		}
 
-        /// <summary>
-        /// Add an alarm or shower at a requested date and time
-        /// </summary>
-        public static void Add_Timed_Request(string type, string dateToComplete, string timeToComplete)
+		/// <summary>
+		/// Add an alarm or shower at a requested date and time
+		/// </summary>
+		public static void Add_Timed_Request(string type, string dateToComplete, string timeToComplete)
         {
             _MySQL.Insert_Request("INSERT");
         }

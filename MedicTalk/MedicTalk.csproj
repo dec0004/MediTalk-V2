@@ -61,23 +61,11 @@
     <Compile Include="Forms\Alarm.Designer.cs">
       <DependentUpon>Alarm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Forgot_UserName.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Forgot_UserName.Designer.cs">
-      <DependentUpon>Forgot_UserName.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Forgot_Password.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Forgot_Password.Designer.cs">
-      <DependentUpon>Forgot_Password.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Order_Food.cs">
       <SubType>Form</SubType>
@@ -122,12 +110,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Order_Food.resx">
       <DependentUpon>Order_Food.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Forgot_Password.resx">
-      <DependentUpon>Forgot_Password.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Forgot_UserName.resx">
-      <DependentUpon>Forgot_UserName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -236,6 +218,45 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page4.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page5.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Assistance1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Assistance2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emergency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emergency1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emergency2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emergency3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

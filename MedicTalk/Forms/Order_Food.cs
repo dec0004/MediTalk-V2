@@ -32,9 +32,10 @@ namespace MedicTalk
 			_connect = connect;
 			homePage = _homePage;
 			_request_emerg = request_emerg;
+			button1.BackgroundImageLayout = ImageLayout.Stretch;
 
-            // Set meal type depending on what button the user clicked on the home page
-            _mealType = mealType;
+			// Set meal type depending on what button the user clicked on the home page
+			_mealType = mealType;
 
             // Change the text of the header so that it matches what meal the 
             // user wants (Breakfast, lunch, dinner, etc)
@@ -46,12 +47,7 @@ namespace MedicTalk
         }
         
 
-        // Emergency button
-        private void button7_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show("A nurse will be with you as soon as possible");
-			_request_emerg.CallRequest();
-		}
+     
 
         // Back button
 		private void button1_Click(object sender, EventArgs e)
@@ -137,5 +133,18 @@ namespace MedicTalk
         {
 
         }
-    }
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("A nurse will be with you as soon as possible");
+			_request_emerg.CallRequest();
+		}
+
+
+		private void button3_Click_2(object sender, EventArgs e)
+		{
+			MessageBox.Show("A nurse will be with you as soon as possible");
+			_request_emerg.CallRequest();
+		}
+	}
 }

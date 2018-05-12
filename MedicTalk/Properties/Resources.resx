@@ -118,29 +118,74 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Icon_Drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Drink.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login_Page2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Visitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Visitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_Dinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Dinner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Assistance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Assistance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_Shower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Shower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Page1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Alarm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Assistance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Assistance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_Emergency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icon_Emergency3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Emergency2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Home_Background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_BFast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_BFast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login_Page_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Return" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_Visitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Visitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Shower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Shower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Emergency2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Emergency2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Emergency1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Emergency1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home_Background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Lunch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Lunch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Food_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Food_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Drink.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MediTalk_Heading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MediTalk_Heading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Assistance1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Assistance1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Breakfast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Breakfast.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Request_Emergency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Request_Emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_Submitted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Submitted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,49 +193,46 @@
   <data name="Icon_Emergency1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Emergency1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Home_Background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Breakfast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Breakfast.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Visitor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Visitor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Login_Page_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login_Page_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Emergency2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Home_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Request_Emergency" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Request_Emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Emergency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Page4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page4.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_Submit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Submit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Lunch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Lunch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Emergency3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Emergency2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Alarm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Dinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Dinner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Food_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Food_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MediTalk_Heading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MediTalk_Heading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_BFast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_BFast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plain_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plain_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Page5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page5.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Assistance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Assistance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Page3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_Page3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Return" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Visitor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Visitor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Assistance2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Assistance2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Emergency2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Emergency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Emergency3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Emergency3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
