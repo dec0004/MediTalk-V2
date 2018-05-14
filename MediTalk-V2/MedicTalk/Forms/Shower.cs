@@ -19,7 +19,6 @@ namespace MedicTalk
 		public string _minute;
 		public string _time;
 		public string _type;
-		List<string> Parameters;
 		List<string> ParameterValues;
 		public Request_Emergency _emergencyRequest;
 
